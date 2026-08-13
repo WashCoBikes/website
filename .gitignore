@@ -26,5 +26,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# agent cost accounting — local reference only
-docs/costs.md
+# planning and architecture notes — kept local: they name individual
+# volunteers and staff and aren't ours to publish
+docs/

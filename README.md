@@ -9,10 +9,12 @@ tier. Content is Markdown in this repo, edited through
 [Sveltia CMS](https://github.com/sveltia/sveltia-cms).
 
 > **Status: prototype.** All 21 routes build with real content migrated from the
-> live site, but the layout and the CMS admin have **not been opened in a
-> browser** yet. Treat the visual design as unreviewed. See
-> [docs/implementation-plan.md](docs/implementation-plan.md) §11 for exactly what
-> is and isn't verified.
+> live site, and the layout has had a first review pass. It exists to support a
+> design and structure conversation with stakeholders, not to be
+> production-complete.
+>
+> Planning and architecture notes are kept outside this repo for now; ask
+> Brandon if you need them.
 
 ## Getting started
 
@@ -76,7 +78,6 @@ public/
   admin/            Sveltia CMS
   _redirects        Old URL -> new URL, 301s
 scripts/            Content extraction and verification
-docs/               Requirements, architecture decisions, interview plans
 ```
 
 ## Editing content
@@ -91,7 +92,6 @@ Repository." It needs no login and commits nothing.
 
 Which backend this ends up on is deliberately still open — it depends on whether
 the people who will actually edit the site are willing to use a GitHub account.
-See [docs/prototype-plan.md](docs/prototype-plan.md).
 
 ## Conventions worth knowing
 
@@ -105,10 +105,3 @@ See [docs/prototype-plan.md](docs/prototype-plan.md).
   changing an `id` breaks an inbound link. `mise run verify` won't catch that —
   it checks paths, not fragments.
 - **Hosting must stay under $143/year**, the current cost being replaced.
-
-## Documentation
-
-- [requirements.md](docs/requirements.md) — client requirements and the proposed sitemap
-- [prototype-plan.md](docs/prototype-plan.md) — architecture decisions and what's still open
-- [implementation-plan.md](docs/implementation-plan.md) — build spec and findings log
-- [interview-plan-ka.md](docs/interview-plan-ka.md), [-nancy](docs/interview-plan-nancy.md), [-todd](docs/interview-plan-todd.md) — stakeholder interviews
