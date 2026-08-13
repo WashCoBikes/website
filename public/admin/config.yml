@@ -1,0 +1,147 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+# WashCo Bikes — Sveltia CMS configuration (Decap-compatible).
+# Local mode: open /admin/index.html in a Chromium browser and choose
+# "Work with Local Repository". The backend block is required for local mode
+# but no OAuth app is needed — see docs/implementation-plan.md §9.
+
+backend:
+  name: github
+  repo: WashCoBikes/website
+
+media_folder: src/assets/images
+public_folder: /src/assets/images
+
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    description: The site's content pages. Edit the body to change the text.
+    folder: src/content/pages
+    path: '{{slug}}'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Title', name: title, widget: string, hint: 'Shown as the page heading and in the browser tab.' }
+      - { label: 'Path', name: slug, widget: string, hint: 'URL path without a leading slash, e.g. "about/affiliates". Leave nested pages in their subfolder.' }
+      - { label: 'Language', name: locale, widget: select, default: en, options: [en, es] }
+      - { label: 'Order', name: order, widget: number, value_type: int, required: false, hint: 'Sort order within a section.' }
+      - { label: 'Source URL', name: sourceUrl, widget: string, required: false, hint: 'Original page URL, kept for reference.' }
+      - { label: 'Draft', name: draft, widget: boolean, default: false }
+      - label: 'Sections'
+        name: sections
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{id}} — {{label}}'
+        hint: 'On-page section anchors (used for the section navigation on tabbed pages).'
+        fields:
+          - { label: 'Anchor id', name: id, widget: string }
+          - { label: 'Label', name: label, widget: string }
+          - { label: 'Staff group', name: staffGroup, widget: select, required: false, options: [mechanic, instructor] }
+      - { label: 'Content', name: body, widget: markdown }
+
+  - name: staff
+    label: Staff
+    label_singular: Staff member
+    description: Mechanics and camp instructors.
+    folder: src/content/staff
+    create: true
+    fields:
+      - { label: 'Name', name: name, widget: string }
+      - { label: 'Role', name: role, widget: string, hint: 'e.g. Mechanic, Instructor, Camps Coordinator.' }
+      - { label: 'Group', name: group, widget: select, options: [mechanic, instructor] }
+      - { label: 'Order', name: order, widget: number, value_type: int, required: false }
+      - { label: 'Photo', name: photo, widget: image, required: false, hint: 'Square headshot works best.' }
+      - { label: 'Bio', name: bio, widget: markdown, required: false }
+
+  - name: events
+    label: Events
+    label_singular: Event
+    description: Community rides, camps, clinics, and rodeos.
+    folder: src/content/events
+    create: true
+    fields:
+      - { label: 'Event name', name: title, widget: string }
+      - { label: 'Start date', name: startDate, widget: datetime, format: YYYY-MM-DD }
+      - { label: 'End date', name: endDate, widget: datetime, format: YYYY-MM-DD, required: false }
+      - { label: 'Location', name: location, widget: string, required: false }
+      - { label: 'Source URL', name: sourceUrl, widget: string, required: false, hint: 'Original event URL, kept for reference.' }
+      - { label: 'Details', name: body, widget: markdown, required: false, hint: 'Time, description, and contact info.' }
+
+  - name: positions
+    label: Open Positions
+    label_singular: Position
+    description: Open volunteer and paid roles.
+    folder: src/content/positions
+    create: true
+    fields:
+      - { label: 'Position', name: title, widget: string }
+      - { label: 'Type', name: type, widget: select, options: [volunteer, paid] }
+      - { label: 'Active', name: active, widget: boolean, default: true, hint: 'Turn off to hide this position without deleting it.' }
+      - { label: 'Description', name: body, widget: markdown }
+
+  - name: settings
+    label: Site Settings
+    description: Organization details, hours, and the homepage hero and promo.
+    files:
+      - name: site
+        label: Site settings
+        file: src/data/site.json
+        format: json
+        fields:
+          - { label: 'Organization name', name: name, widget: string }
+          - { label: 'Mission', name: mission, widget: text }
+          - { label: 'Phone', name: phone, widget: string }
+          - { label: 'Email', name: email, widget: string }
+          - { label: 'Shop email', name: shopEmail, widget: string }
+          - label: 'Address'
+            name: address
+            widget: object
+            fields:
+              - { label: 'Street', name: street, widget: string }
+              - { label: 'City', name: city, widget: string }
+              - { label: 'State', name: state, widget: string }
+              - { label: 'Zip', name: zip, widget: string }
+          - label: 'Hours'
+            name: hours
+            widget: object
+            fields:
+              - { label: 'Note', name: note, widget: string, required: false }
+              - label: 'Days'
+                name: days
+                widget: list
+                fields:
+                  - { label: 'Day', name: day, widget: string }
+                  - { label: 'Opens', name: open, widget: string }
+                  - { label: 'Closes', name: close, widget: string }
+          - label: 'Homepage hero'
+            name: hero
+            widget: object
+            fields:
+              - { label: 'Heading', name: heading, widget: string }
+              - { label: 'Body', name: body, widget: text }
+              - { label: 'Image', name: image, widget: string, hint: 'Filename in src/assets/images (e.g. TdP_riders.jpg).' }
+              - label: 'Button'
+                name: cta
+                widget: object
+                fields:
+                  - { label: 'Label', name: label, widget: string }
+                  - { label: 'Link', name: href, widget: string }
+          - label: 'Promo block'
+            name: promo
+            widget: object
+            fields:
+              - { label: 'Heading', name: heading, widget: string }
+              - label: 'Details'
+                name: details
+                widget: list
+                fields:
+                  - { label: 'Line', name: line, widget: string }
+              - { label: 'Body', name: body, widget: text }
+              - label: 'Button'
+                name: cta
+                widget: object
+                fields:
+                  - { label: 'Label', name: label, widget: string }
+                  - { label: 'Link', name: href, widget: string }
