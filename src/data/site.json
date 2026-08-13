@@ -1,0 +1,56 @@
+{
+  "name": "WashCo Bikes",
+  "legalName": "Washington County Community Bicycle Center",
+  "dba": "Washington County Bicycle Transportation Coalition",
+  "mission": "We make bicyclists and bicycling better in Washington County — through education, encouragement, and advocacy.",
+  "description": "WashCo Bikes is a 501(c)(3) nonprofit making bicyclists and bicycling better in Washington County, Oregon through education, encouragement, and advocacy.",
+  "address": {
+    "street": "137 NE 3rd Ave.",
+    "city": "Hillsboro",
+    "state": "OR",
+    "zip": "97124"
+  },
+  "phone": "503-844-9740",
+  "email": "info@washcobikes.org",
+  "shopEmail": "Shop@washcobikes.org",
+  "hours": {
+    "note": "Hours effective September 15, 2025",
+    "days": [
+      { "day": "Monday", "open": "10:00 AM", "close": "5:00 PM" },
+      { "day": "Tuesday", "open": "10:00 AM", "close": "5:00 PM" },
+      { "day": "Wednesday", "open": "10:00 AM", "close": "5:00 PM" },
+      { "day": "Thursday", "open": "10:00 AM", "close": "5:00 PM" },
+      { "day": "Friday", "open": "10:00 AM", "close": "5:00 PM" },
+      { "day": "Saturday", "open": "10:00 AM", "close": "5:00 PM" },
+      { "day": "Sunday", "open": "12:00 PM", "close": "4:00 PM" }
+    ]
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WashCoBikes/",
+    "twitter": "https://twitter.com/WashCoBikes"
+  },
+  "hero": {
+    "heading": "We make bicyclists and bicycling better in Washington County.",
+    "body": "Through education, encouragement, and advocacy.",
+    "image": "TdP_riders.jpg",
+    "cta": { "label": "Volunteer With Us", "href": "/get-involved" }
+  },
+  "promo": {
+    "heading": "Bike Hillsboro 2026",
+    "details": [
+      "Saturday, August 8",
+      "Check-in @ WashCo Bike Shop: 9:15 AM",
+      "Ride starts: 10 AM · Ends at noon"
+    ],
+    "body": "Join a family-friendly bike ride touring Hamby, Griffin Oaks & Bagley parks. FREE! No pre-registration required! Kids activities & tune-ups available along the way!",
+    "cta": {
+      "label": "Volunteer for Bike Hillsboro",
+      "href": "https://washcobikes.wufoo.com/forms/volunteer-for-bike-hillsboro-aug-8-2026/"
+    }
+  },
+  "newsletter": {
+    "heading": "Want to stay in the know?",
+    "body": "Sign up for our monthly newsletter.",
+    "action": "https://oi.vresp.com?fid=d017d0f7ff"
+  }
+}
