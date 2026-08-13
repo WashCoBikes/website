@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StaffCard from '../../components/StaffCard.astro';
+
+const mechanics = (await getCollection('staff'))
+  .filter((m) => m.data.group === 'mechanic')
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+---
+
+<BaseLayout title="Meet Our Mechanics">
+  <section class="wrap mechanics-page">
+    <header class="page-head">
+      <h1>Meet Our Mechanics</h1>
+      <p class="lede">
+        The team that keeps bikes rolling — full-service repair and friendly advice.
+      </p>
+    </header>
+
+    <div class="grid grid--3">
+      {mechanics.map((m) => (
+        <StaffCard
+          name={m.data.name}
+          role={m.data.role}
+          bio={m.data.bio}
+          photo={m.data.photo}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .mechanics-page { padding: 2rem var(--gutter) 3rem; }
+  .lede { color: var(--text-soft); max-width: 46rem; }
+  .grid { margin-top: 1.5rem; }
+</style>

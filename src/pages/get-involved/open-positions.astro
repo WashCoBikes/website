@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const positions = (await getCollection('positions')).filter((p) => p.data.active);
+---
+
+<BaseLayout title="Open Positions">
+  <section class="wrap positions-page">
+    <header class="page-head">
+      <h1>Open Positions</h1>
+      <p class="lede">
+        Volunteer and paid roles that keep WashCo Bikes rolling.
+      </p>
+    </header>
+
+    <div class="position-list">
+      {positions.map(async (p) => {
+        const { Content } = await render(p);
+        return (
+          <article class="position-card card">
+            <header class="position-head">
+              <h2>{p.data.title}</h2>
+              <span class:list={['badge', `badge--${p.data.type}`]}>
+                {p.data.type === 'paid' ? 'Paid' : 'Volunteer'}
+              </span>
+            </header>
+            <div class="position-body prose">
+              <Content />
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .positions-page { padding: 2rem var(--gutter) 3rem; }
+  .lede { color: var(--text-soft); max-width: 46rem; }
+  .position-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .position-card { padding: 1.5rem; }
+  .position-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .position-head h2 { margin: 0; font-size: 1.3rem; }
+  .badge {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .badge--paid { background: var(--gold-500); color: var(--navy-900); }
+  .badge--volunteer { background: var(--navy-100); color: var(--navy-800); }
+  .position-body { margin-top: 0.75rem; }
+</style>
