@@ -27,14 +27,17 @@ jobs:
       - run: npm ci
 
       - name: Build
+        id: build
         run: npm run build
 
       # --- Fast structural checks (no browser) ---------------------------
 
       - name: Alt text on every content image
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: python3 scripts/apply-alt-text.py --check
 
       - name: Unresolved Astro image placeholders
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         # Markdown rendered with `set:html` instead of <Content /> ships
         # `<img __ASTRO_IMAGE_=...>` with no src, so the image never renders.
         run: |
@@ -46,6 +49,7 @@ jobs:
           fi
 
       - name: Redirect coverage
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         # Checked against the committed snapshot so CI doesn't depend on the
         # live site. Refresh with: verify-redirects.py --snapshot
         run: python3 scripts/verify-redirects.py
@@ -53,6 +57,7 @@ jobs:
       # --- Accessibility (real browser, WCAG 2.1 AA) ---------------------
 
       - name: Serve built site
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         # --background daemonises; a plain `&` leaves the step's shell owning a
         # foreground process and the run never advances.
         run: |
@@ -60,6 +65,7 @@ jobs:
           npx wait-on http://localhost:4321 --timeout 60000
 
       - name: Accessibility audit
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npx pa11y-ci --config .pa11yci.json
 
       - name: Stop preview server
