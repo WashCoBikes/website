@@ -1,0 +1,104 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionNav from '../components/SectionNav.astro';
+import StaffCard from '../components/StaffCard.astro';
+import ChildLinks from '../components/ChildLinks.astro';
+import { generatedChildren } from '../lib/nav';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => !data.draft);
+  return pages.map((page) => ({
+    params: { slug: page.data.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+await render(page);
+const staff = await getCollection('staff');
+
+// Section landing pages link to the pages beneath them. Slugs are hierarchical,
+// so children are everything one level down; routes that render generated
+// content aren't in the collection and come from `generatedChildren`.
+const slug = page.data.slug;
+const allPages = await getCollection('pages', ({ data }) => !data.draft);
+const childLinks = [
+  ...allPages
+    .filter((p) => {
+      const rest = p.data.slug.startsWith(`${slug}/`)
+        ? p.data.slug.slice(slug.length + 1)
+        : null;
+      return rest !== null && !rest.includes('/');
+    })
+    .map((p) => ({ label: p.data.title, href: `/${p.data.slug}` })),
+  ...(generatedChildren[slug] ?? []),
+].sort((a, b) => a.label.localeCompare(b.label));
+
+const sections = page.data.sections ?? [];
+const staffSections = sections.filter((s) => s.staffGroup);
+
+// Split the rendered markdown HTML around each staff slot so instructor/mechanic
+// cards can be injected in their on-page position.
+type Chunk =
+  | { type: 'html'; html: string }
+  | { type: 'staff'; id: string; label: string; group: string };
+
+const chunks: Chunk[] = [];
+let rest = page.rendered?.html ?? '';
+for (const s of staffSections) {
+  const marker = `<div data-staff-slot="${s.staffGroup}"></div>`;
+  const idx = rest.indexOf(marker);
+  if (idx === -1) continue;
+  chunks.push({ type: 'html', html: rest.slice(0, idx) });
+  chunks.push({ type: 'staff', id: s.id, label: s.label, group: s.staffGroup! });
+  rest = rest.slice(idx + marker.length);
+}
+chunks.push({ type: 'html', html: rest });
+
+const navSections = sections.map(({ id, label }) => ({ id, label }));
+---
+
+<BaseLayout title={page.data.title}>
+  <article class="wrap page">
+    <header class="page-head">
+      <h1 class="page-title">{page.data.title}</h1>
+      {navSections.length > 0 && <SectionNav sections={navSections} />}
+    </header>
+
+    <div class="prose">
+      {chunks.map((chunk) =>
+        chunk.type === 'html' ? (
+          <Fragment set:html={chunk.html} />
+        ) : (
+          <section class="staff-section">
+            <h2 id={chunk.id}>{chunk.label}</h2>
+            <div class="grid grid--3">
+              {staff
+                .filter((m) => m.data.group === chunk.group)
+                .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+                .map((m) => (
+                  <StaffCard
+                    name={m.data.name}
+                    role={m.data.role}
+                    bio={m.data.bio}
+                    photo={m.data.photo}
+                  />
+                ))}
+            </div>
+          </section>
+        ),
+      )}
+    </div>
+
+    <ChildLinks children={childLinks} />
+  </article>
+</BaseLayout>
+
+<style>
+  .page { padding-top: 2rem; padding-bottom: 3rem; }
+  .page-head { margin-bottom: 1rem; }
+  .page-title { margin-bottom: 0.25rem; }
+  .staff-section { margin-top: 2.5rem; }
+  .staff-section h2 { scroll-margin-top: calc(var(--header-h) + 1rem); }
+</style>

@@ -1,0 +1,245 @@
+/* WashCo Bikes — global stylesheet
+   Single plain-CSS file, custom properties, mobile-first.
+   Brand derived from the live logo: navy #162e55 + gold #ffbc19. */
+
+:root {
+  /* Brand */
+  --navy-950: #0c1730;
+  --navy-900: #0f1e3d;
+  --navy-800: #162e55;
+  --navy-700: #1e3f74;
+  --navy-600: #2a559c;
+  --navy-100: #e6ecf6;
+  --navy-50: #f2f5fa;
+  --gold-500: #ffbc19;
+  --gold-400: #ffc940;
+  --gold-700: #b97e00;
+
+  /* Neutrals */
+  --paper: #f7f5f0;
+  --white: #ffffff;
+  --ink: #1a2433;
+  --muted: #5c6675;
+  --line: #e4e1d9;
+
+  /* Semantic */
+  --bg: var(--paper);
+  --surface: var(--white);
+  --text: var(--ink);
+  --text-soft: var(--muted);
+  --link: var(--navy-700);
+  --accent: var(--gold-500);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 2px rgba(12, 23, 48, 0.06), 0 1px 3px rgba(12, 23, 48, 0.08);
+  --shadow-md: 0 6px 16px rgba(12, 23, 48, 0.1), 0 2px 6px rgba(12, 23, 48, 0.08);
+  --shadow-lg: 0 20px 40px rgba(12, 23, 48, 0.16);
+
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Karla", "Segoe UI", system-ui, sans-serif;
+
+  --maxw: 76rem; /* ~1216px */
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-h: 4rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--navy-800);
+  margin: 0 0 0.6em;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-top: 2.25rem; }
+h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+h4 { font-size: 1.05rem; }
+
+p { margin: 0 0 1.1em; }
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover { color: var(--navy-900); }
+
+:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+ul, ol { padding-left: 1.25rem; margin: 0 0 1.1em; }
+li { margin-bottom: 0.35em; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 1.25rem;
+  border-left: 4px solid var(--gold-500);
+  color: var(--navy-800);
+  font-style: italic;
+}
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.95rem; }
+th, td { padding: 0.6rem 0.75rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: var(--navy-50); color: var(--navy-800); }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  background: var(--navy-800);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn--primary {
+  background: var(--gold-500);
+  color: var(--navy-900);
+  box-shadow: var(--shadow-sm);
+}
+.btn--primary:hover {
+  background: var(--gold-400);
+  box-shadow: var(--shadow-md);
+  color: var(--navy-900);
+}
+.btn--outline {
+  background: transparent;
+  color: var(--navy-800);
+  border-color: var(--navy-800);
+}
+.btn--outline:hover { background: var(--navy-800); color: #fff; }
+.btn--ghost-light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn--ghost-light:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+
+/* Prose (migrated content) */
+.prose { max-width: 46rem; }
+.prose > :first-child { margin-top: 0; }
+.prose h2 { scroll-margin-top: calc(var(--header-h) + 1rem); }
+.prose h3 { scroll-margin-top: calc(var(--header-h) + 1rem); }
+.prose img { border-radius: var(--radius); margin: 1rem 0; }
+.prose a[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+.prose p > img { display: inline-block; vertical-align: middle; }
+
+/* Generic card grid */
+.grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.card h3 { margin-top: 0; }
+.card h3 a { color: var(--navy-800); text-decoration: none; }
+.card h3 a:hover { color: var(--navy-600); }
+.card .meta { color: var(--text-soft); font-size: 0.88rem; }
+
+/* Section nav (tabbed pages) */
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+.section-nav a {
+  display: inline-block;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: var(--navy-100);
+  color: var(--navy-800);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  font-family: var(--font-display);
+}
+.section-nav a:hover { background: var(--navy-800); color: #fff; }
+
+@media (min-width: 640px) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(4, 1fr); }
+}

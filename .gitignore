@@ -1,0 +1,31 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# scrape cache
+.cache/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# planning and architecture notes — kept local: they name individual
+# volunteers and staff and aren't ours to publish
+docs/

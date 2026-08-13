@@ -1,0 +1,101 @@
+---
+import { navItems } from '../lib/nav';
+import site from '../data/site.json';
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <p class="footer-name">{site.name}</p>
+      <p class="footer-mission">{site.mission}</p>
+      <address class="footer-address">
+        {site.address.street}<br />
+        {site.address.city}, {site.address.state} {site.address.zip}<br />
+        <a href={`tel:+1${site.phone.replace(/[^0-9]/g, '')}`}>{site.phone}</a>
+      </address>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <p class="footer-heading">Explore</p>
+      <ul>
+        {navItems.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="footer-contact">
+      <p class="footer-heading">Get in touch</p>
+      <ul class="footer-plain">
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><a href={`mailto:${site.shopEmail}`}>{site.shopEmail}</a> (shop)</li>
+        <li>
+          <a href={site.social.facebook} target="_blank" rel="noopener">Facebook</a>
+          {' · '}
+          <a href={site.social.twitter} target="_blank" rel="noopener">X / Twitter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">
+      <p>© {new Date().getFullYear()} {site.name}. A 501(c)(3) nonprofit.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy-900);
+    color: rgba(255, 255, 255, 0.82);
+    margin-top: 4rem;
+    padding-top: 3rem;
+  }
+  .footer-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  .footer-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .footer-mission { color: rgba(255, 255, 255, 0.72); max-width: 34ch; }
+  .footer-address { font-style: normal; line-height: 1.7; }
+  .footer-address a, .footer-contact a, .footer-nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+  }
+  .footer-address a:hover, .footer-contact a:hover, .footer-nav a:hover {
+    color: var(--gold-400);
+    text-decoration: underline;
+  }
+  .footer-heading {
+    color: var(--gold-400);
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  .footer-nav ul, .footer-plain {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+  }
+  .footer-nav li { margin: 0; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 2.5rem;
+    padding: 1.25rem 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .footer-bottom p { margin: 0; }
+
+  @media (min-width: 700px) {
+    .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  }
+</style>

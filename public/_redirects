@@ -1,0 +1,54 @@
+# WashCo Bikes — URL redirects (old Homespun routes -> new flattened routes)
+# Netlify serves this file directly. All 301 permanent.
+
+# --- Homepage aliases (the live site's "Who We Are"/"Our Affiliates" also live at /home/*)
+/home                                                /                                         301
+/home/who_we_are                                     /about                                    301
+/home/our_affiliates                                 /about/affiliates                         301
+
+# --- About
+/index/who_we_are                                    /about                                    301
+/index/our_affiliates                                /about/affiliates                         301
+/support_us/more_ways_to_support/about_us            /about                                    301
+
+# --- Shop
+/retail_amp_repair_shop                              /shop                                     301
+/retail_amp_repair_shop/service_and_repair_rates     /shop/rates                               301
+/retail_amp_repair_shop/meet_our_mechanics           /shop/mechanics                           301
+/retail_amp_repair_shop/tienda_y_taller_de_reparaciones  /shop/es                              301
+
+# --- Programs
+/programs/saddle_up_bike_camp                        /programs/saddle-up-bike-camp             301
+/programs/saddle_up_bike_camp/camps_faq              /programs/saddle-up-bike-camp#faq         301
+/programs/saddle_up_bike_camp/meet_our_instructors   /programs/saddle-up-bike-camp#instructors 301
+/programs/saddle_up_bike_camp/photo_gallery          /programs/saddle-up-bike-camp#gallery     301
+/programs/education/bike_repair_clinics              /programs/education#repair-clinics        301
+/programs/education/smart_cycling                    /programs/education#smart-cycling         301
+/programs/education/skills_and_safety_rodeos         /programs/education#rodeos                301
+/programs/education/learn_to_ride                    /programs/education#learn-to-ride         301
+
+# --- Get Involved (was Jobs/Volunteer + Support Us)
+/jobs_volunteer                                      /get-involved                             301
+/jobs_volunteer/volunteer_events                     /get-involved/volunteer-events            301
+/jobs_volunteer/open_positions                       /get-involved/open-positions              301
+/support_us                                          /get-involved                             301
+/support_us/join_or_donate                           /get-involved/join-or-donate              301
+/support_us/in_memoriam                              /get-involved/join-or-donate#in-memoriam  301
+/support_us/big_wheelies                             /get-involved/big-wheelies                301
+/support_us/more_ways_to_support                     /get-involved/more-ways-to-support        301
+/support_us/more_ways_to_support/our_stories         /get-involved/more-ways-to-support#our-stories 301
+/support_us/more_ways_to_support/contact             /contact                                  301
+
+# --- Events
+/washco_bikes_events                                 /events                                   301
+/washco_bikes_events/*                               /events                                   301
+
+# --- Resources
+/partners                                            /resources/partners                       301
+/ride_resources                                      /resources                                301
+
+# --- Contact
+/contact_us                                          /contact                                  301
+
+# --- Stale news posts (redirect to home; flagged for stakeholder decision)
+/*.en                                                 /                                         301

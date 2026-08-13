@@ -1,0 +1,85 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const events = (await getCollection('events')).sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf(),
+);
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+---
+
+<BaseLayout title="Events">
+  <section class="wrap events-page">
+    <header class="page-head">
+      <h1>Events</h1>
+      <p class="lede">
+        Bike camps, clinics, rodeos, and community rides across Washington County.
+      </p>
+    </header>
+
+    <ul class="event-list">
+      {events.map(async (e) => {
+        const { Content } = await render(e);
+        return (
+          <li class="event-card card">
+            <time class="event-date" datetime={e.data.startDate.toISOString()}>
+              {formatDate(e.data.startDate)}
+            </time>
+            <div class="event-body">
+              <h2>{e.data.title}</h2>
+              {e.data.location && <p class="event-location">{e.data.location}</p>}
+              <div class="event-desc"><Content /></div>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+</BaseLayout>
+
+<style>
+  .events-page { padding: 2rem var(--gutter) 3rem; }
+  .lede { color: var(--text-soft); max-width: 46rem; }
+  .event-list {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+  .event-card {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .event-date {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--navy-800);
+    background: var(--gold-500);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    width: fit-content;
+    white-space: nowrap;
+  }
+  .event-body h2 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+  .event-location { margin: 0 0 0.35rem; font-weight: 700; color: var(--navy-700); font-size: 0.95rem; }
+  .event-desc { color: var(--text-soft); font-size: 0.95rem; }
+  .event-desc p { margin: 0 0 0.4rem; }
+  .event-desc p:first-child { font-weight: 700; color: var(--text); }
+
+  @media (min-width: 700px) {
+    .event-card { grid-template-columns: 11rem 1fr; }
+  }
+</style>

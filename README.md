@@ -1,2 +1,107 @@
-# website
-Prototype Modern Website for https://washcobikes.org/
+# WashCo Bikes — website prototype
+
+A rebuild of [washcobikes.org](https://washcobikes.org/) for the Washington
+County Bicycle Organization, a community bike shop and nonprofit in Hillsboro,
+Oregon.
+
+Static [Astro](https://astro.build) site, built to deploy on Netlify's free
+tier. Content is Markdown in this repo, edited through
+[Sveltia CMS](https://github.com/sveltia/sveltia-cms).
+
+> **Status: prototype.** All 21 routes build with real content migrated from the
+> live site, and the layout has had a first review pass. It exists to support a
+> design and structure conversation with stakeholders, not to be
+> production-complete.
+>
+> Planning and architecture notes are kept outside this repo for now; ask
+> Brandon if you need them.
+
+## Getting started
+
+Tool versions come from [mise](https://mise.jdx.dev). It pins Node and Python so
+you don't have to think about either.
+
+```bash
+mise install     # provision Node 22 + Python 3.14
+mise run install # install Node dependencies
+mise run dev     # http://localhost:4321
+```
+
+If you'd rather not use mise, Node 22.12+ and `npm run dev` work fine. Note that
+mise does **not** auto-activate in non-interactive shells, so scripts and CI need
+`mise exec -- <command>` or a `mise run` task.
+
+## Tasks
+
+Run `mise tasks` to list these, or `mise run <task>`.
+
+| Task | What it does |
+|---|---|
+| `install` | Install Node dependencies |
+| `dev` | Start the dev server on http://localhost:4321 |
+| `build` | Build the static site into `dist/` |
+| `preview` | Build, then serve `dist/` locally for review |
+| `sync` | Regenerate content collection types after a schema change |
+| `verify` | Check every live-site URL resolves to a route or redirect |
+| `clean` | Remove build output and generated types |
+
+### Content migration
+
+Only needed when re-pulling from the live site. Day-to-day editing happens in
+`src/content/` or through the CMS.
+
+| Task | What it does |
+|---|---|
+| `deps:py` | Install scraper dependencies into `.cache/py-libs` |
+| `scrape` | Re-fetch washcobikes.org into `.cache/scrape/` and `src/assets/images/` |
+| `content` | Regenerate `src/content/` from the scrape cache |
+| `refresh` | `scrape` then `content` — a full content refresh |
+
+`mise run verify` is the one to remember. The new sitemap is much flatter than
+the old one, which is only safe because every retired URL still redirects
+somewhere sensible. It checks all 74 live URLs against the built routes and
+`public/_redirects`, and fails loudly if any stops resolving.
+
+## Layout
+
+```
+src/
+  content/          Markdown content — pages, staff, events, positions
+  content.config.ts Collection schemas
+  data/site.json    Address, hours, phone, mission, hero, promo block
+  pages/            Routes; [...slug].astro drives most of them
+  components/       Header, Footer, HoursWidget, StaffCard, SectionNav
+  layouts/          BaseLayout
+  styles/global.css Single stylesheet, custom properties
+  assets/images/    Migrated images, processed by Astro
+public/
+  admin/            Sveltia CMS
+  _redirects        Old URL -> new URL, 301s
+scripts/            Content extraction and verification
+```
+
+## Editing content
+
+Markdown in `src/content/` is the source of truth. `src/data/site.json` holds
+global values — hours are structured per-day data rather than a prose string,
+because the homepage widget renders them.
+
+The CMS lives at `/admin`. It currently runs in **local mode** only: open
+`/admin/index.html` in a Chromium-based browser and choose "Work with Local
+Repository." It needs no login and commits nothing.
+
+Which backend this ends up on is deliberately still open — it depends on whether
+the people who will actually edit the site are willing to use a GitHub account.
+
+## Conventions worth knowing
+
+- **Plain CSS, no Tailwind and no component library.** This site will be
+  maintained by volunteers and occasional AI assistance; a build-step-free
+  stylesheet is a deliberate durability choice.
+- **Migrated copy is verbatim.** Don't rewrite the organization's words for tone
+  or length. Where the new structure merges old pages, content is concatenated
+  under headings rather than blended.
+- **Anchor ids are load-bearing.** Several redirects target section anchors, so
+  changing an `id` breaks an inbound link. `mise run verify` won't catch that —
+  it checks paths, not fragments.
+- **Hosting must stay under $143/year**, the current cost being replaced.

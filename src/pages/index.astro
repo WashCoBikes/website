@@ -1,0 +1,219 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HoursWidget from '../components/HoursWidget.astro';
+import { navItems } from '../lib/nav';
+import site from '../data/site.json';
+
+const images = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default',
+});
+function resolveImage(name: string) {
+  return images[`../assets/images/${name}`];
+}
+const heroImg = resolveImage(site.hero.image);
+const explore = navItems.filter((n) => n.href !== '/');
+---
+
+<BaseLayout title={site.name}>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Washington County · Oregon</p>
+        <h1>{site.hero.heading}</h1>
+        <p class="hero-body">{site.hero.body}</p>
+        <div class="hero-cta">
+          <a class="btn btn--primary" href={site.hero.cta.href}>{site.hero.cta.label}</a>
+          <a class="btn btn--ghost-light" href="/contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        {heroImg ? (
+          <Image src={heroImg} alt="Cyclists on a community ride" class="hero-img" loading="eager" />
+        ) : null}
+      </div>
+    </div>
+  </section>
+
+  <section class="promo" aria-label="Current promo">
+    <div class="wrap promo-inner">
+      <div class="promo-copy">
+        <p class="promo-kicker">Now · {site.promo.heading}</p>
+        <ul class="promo-details">
+          {site.promo.details.map((d) => <li>{d}</li>)}
+        </ul>
+        <p class="promo-body">{site.promo.body}</p>
+      </div>
+      <div class="promo-action">
+        <a class="btn btn--primary" href={site.promo.cta.href} target="_blank" rel="noopener">
+          {site.promo.cta.label}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-grid" aria-label="Visit and stay in touch">
+    <div class="wrap home-grid-inner">
+      <HoursWidget />
+      <div class="newsletter card">
+        <h2>{site.newsletter.heading}</h2>
+        <p>{site.newsletter.body}</p>
+        <!-- TODO: newsletter signup — live form deferred (VerticalResponse/Wufoo). -->
+        <form class="newsletter-form" action="#" onsubmit="return false;">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" type="email" placeholder="you@example.org" required />
+          <button class="btn btn--primary" type="submit" disabled>Coming soon</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore" aria-label="Explore the site">
+    <div class="wrap">
+      <h2>Explore</h2>
+      <ul class="explore-grid">
+        {explore.map((n) => (
+          <li>
+            <a class="explore-card card" href={n.href}>
+              <span class="explore-arrow" aria-hidden="true">→</span>
+              {n.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(160deg, var(--navy-900) 0%, var(--navy-800) 55%, var(--navy-700) 100%);
+    color: #fff;
+    padding: clamp(2.5rem, 6vw, 5rem) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(60% 80% at 85% 20%, rgba(255, 188, 25, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    color: var(--gold-400);
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero-copy h1 { color: #fff; margin-bottom: 0.5rem; }
+  .hero-body {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 34ch;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  .hero-media { display: flex; justify-content: center; }
+  .hero-img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 30rem;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .promo { padding: 1.5rem 0; }
+  .promo-inner {
+    display: grid;
+    gap: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--gold-500);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .promo-kicker {
+    color: var(--navy-700);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+  .promo-details { margin: 0 0 0.75rem; padding: 0; list-style: none; }
+  .promo-details li { margin-bottom: 0.25rem; font-weight: 500; }
+  .promo-body { margin: 0 0 1rem; color: var(--text-soft); }
+  .promo-action { display: flex; align-items: center; }
+
+  .home-grid { padding: 1.5rem 0; }
+  .home-grid-inner {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+  .newsletter h2 { margin-top: 0; }
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .newsletter-form input {
+    flex: 1 1 12rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font: inherit;
+  }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+  }
+
+  .explore { padding: 1.5rem 0 3rem; }
+  .explore-grid {
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .explore-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--navy-800);
+    padding: 1.15rem 1.25rem;
+  }
+  .explore-arrow { color: var(--gold-700); transition: transform 0.15s ease; }
+  .explore-card:hover .explore-arrow { transform: translateX(4px); }
+  .explore-card:hover { color: var(--navy-600); }
+
+  @media (min-width: 700px) {
+    .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
+    .home-grid-inner { grid-template-columns: 1fr 1fr; }
+    .explore-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .explore-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
