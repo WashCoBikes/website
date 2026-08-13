@@ -1,3 +1,64 @@
 [tools]
 node = "22.23.1"
 python = "3.14.6"
+
+[env]
+# Scraper dependencies live outside the repo. `python -m venv` is unusable on
+# this machine (no ensurepip), so they install to a gitignored cache instead.
+PY_LIBS = "{{config_root}}/.cache/py-libs"
+
+# --- Everyday ---------------------------------------------------------------
+
+[tasks.install]
+description = "Install Node dependencies"
+run = "npm install"
+
+[tasks.dev]
+description = "Start the dev server on http://localhost:4321"
+run = "npm run dev"
+
+[tasks.build]
+description = "Build the static site into dist/"
+run = "npm run build"
+
+[tasks.preview]
+description = "Serve the built site locally for review"
+depends = ["build"]
+run = "npm run preview"
+
+[tasks.sync]
+description = "Regenerate content collection types after a schema change"
+run = "npx astro sync"
+
+[tasks.clean]
+description = "Remove build output and generated types"
+run = "rm -rf dist .astro"
+
+# --- Verification -----------------------------------------------------------
+
+[tasks.verify]
+description = "Check every live-site URL resolves to a route or a redirect"
+depends = ["build"]
+run = "python scripts/verify-redirects.py"
+
+# --- Content migration ------------------------------------------------------
+# Only needed when re-pulling from the live site. Day-to-day editing happens in
+# src/content/ or through the CMS, not here.
+
+[tasks."deps:py"]
+description = "Install scraper dependencies into .cache/py-libs"
+run = "pip install --quiet --target $PY_LIBS requests beautifulsoup4 markdownify"
+
+[tasks.scrape]
+description = "Re-fetch washcobikes.org into .cache/scrape/ and src/assets/images/"
+depends = ["deps:py"]
+run = "PYTHONPATH=$PY_LIBS python scripts/scrape.py"
+
+[tasks.content]
+description = "Regenerate src/content/ from the scrape cache"
+depends = ["deps:py"]
+run = "PYTHONPATH=$PY_LIBS python scripts/generate-content.py"
+
+[tasks.refresh]
+description = "Full content refresh: scrape the live site, then regenerate content"
+run = ["mise run scrape", "mise run content"]
