@@ -3,6 +3,8 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionNav from '../components/SectionNav.astro';
 import StaffCard from '../components/StaffCard.astro';
+import ChildLinks from '../components/ChildLinks.astro';
+import { generatedChildren } from '../lib/nav';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages', ({ data }) => !data.draft);
@@ -15,6 +17,23 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 await render(page);
 const staff = await getCollection('staff');
+
+// Section landing pages link to the pages beneath them. Slugs are hierarchical,
+// so children are everything one level down; routes that render generated
+// content aren't in the collection and come from `generatedChildren`.
+const slug = page.data.slug;
+const allPages = await getCollection('pages', ({ data }) => !data.draft);
+const childLinks = [
+  ...allPages
+    .filter((p) => {
+      const rest = p.data.slug.startsWith(`${slug}/`)
+        ? p.data.slug.slice(slug.length + 1)
+        : null;
+      return rest !== null && !rest.includes('/');
+    })
+    .map((p) => ({ label: p.data.title, href: `/${p.data.slug}` })),
+  ...(generatedChildren[slug] ?? []),
+].sort((a, b) => a.label.localeCompare(b.label));
 
 const sections = page.data.sections ?? [];
 const staffSections = sections.filter((s) => s.staffGroup);
@@ -71,6 +90,8 @@ const navSections = sections.map(({ id, label }) => ({ id, label }));
         ),
       )}
     </div>
+
+    <ChildLinks children={childLinks} />
   </article>
 </BaseLayout>
 

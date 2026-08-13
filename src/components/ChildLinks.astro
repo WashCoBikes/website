@@ -1,0 +1,51 @@
+---
+// Links from a section landing page to the pages beneath it. Without these the
+// depth-2 routes are only reachable by typing a URL.
+interface Child {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  children: Child[];
+  heading?: string;
+}
+
+const { children, heading = 'In this section' } = Astro.props;
+---
+
+{
+  children.length > 0 && (
+    <nav class="child-links" aria-labelledby="child-links-heading">
+      <h2 id="child-links-heading">{heading}</h2>
+      <ul class="grid grid--3">
+        {children.map((child) => (
+          <li class="card">
+            <h3>
+              <a href={child.href}>{child.label}</a>
+            </h3>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style>
+  .child-links {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .child-links h2 {
+    margin-bottom: 0.5rem;
+  }
+  .child-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .child-links h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+</style>
