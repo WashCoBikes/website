@@ -9,7 +9,7 @@ draft: false
 
 ## Reborn Bikes
 
-[![](../../../assets/images/Reborn_bikes_Logo_50_.jpg)](https://rebornbikes.org)
+[![Reborn Bikes logo](../../../assets/images/Reborn_bikes_Logo_50_.jpg)](https://rebornbikes.org)
 
 Our mission is to bring refurbished bicycles
 
@@ -23,7 +23,7 @@ thriving and sustainable community.
 
 ## FB4K-Portland
 
-[![](../../../assets/images/FB4K_LOGO.jpg)](https://fb4kportland.org)
+[![Free Bikes 4 Kidz Portland logo](../../../assets/images/FB4K_LOGO.jpg)](https://fb4kportland.org)
 
 FB4K Portland is part of a national network
 
@@ -37,7 +37,7 @@ and get the bikes ready to roll.
 
 ## WTA
 
-[![](../../../assets/images/logo_wta.png)](https://wtw-tma.org)
+[![Westside Transportation Alliance logo](../../../assets/images/logo_wta.png)](https://wtw-tma.org)
 
 Established in 1997, Westside Transportation Alliance
 
@@ -79,7 +79,7 @@ on the road.
 
 ## P:ear Bike Works
 
-[![](../../../assets/images/Pear_logo.jpg)](https://bikeworkspdx.org/)
+[![P:ear Bike Works logo](../../../assets/images/Pear_logo.jpg)](https://bikeworkspdx.org/)
 
 A bike shop for everyone.
 
@@ -97,7 +97,7 @@ refurbished bikes.
 
 ## ReDeploy
 
-[![](../../../assets/images/ReDeploy_logo.jpg)](https://redeploynw.org)
+[![ReDeploy logo](../../../assets/images/ReDeploy_logo.jpg)](https://redeploynw.org)
 
 In a world where community welfare
 

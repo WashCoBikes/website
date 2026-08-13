@@ -15,7 +15,11 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-await render(page);
+// Render via <Content />, never `set:html` on page.rendered.html. Astro emits
+// markdown images as `<img __ASTRO_IMAGE_="...">` placeholders that only the
+// Content component resolves into real <img src>; injecting the raw HTML ships
+// the unresolved placeholder and the image never renders.
+const { Content } = await render(page);
 const staff = await getCollection('staff');
 
 // Section landing pages link to the pages beneath them. Slugs are hierarchical,
@@ -36,25 +40,10 @@ const childLinks = [
 ].sort((a, b) => a.label.localeCompare(b.label));
 
 const sections = page.data.sections ?? [];
+// Staff sections render after the prose rather than at a marker mid-document.
+// Anchor ids are what the redirects target, so position is cosmetic; `sections`
+// order in frontmatter should match so the section nav reads in page order.
 const staffSections = sections.filter((s) => s.staffGroup);
-
-// Split the rendered markdown HTML around each staff slot so instructor/mechanic
-// cards can be injected in their on-page position.
-type Chunk =
-  | { type: 'html'; html: string }
-  | { type: 'staff'; id: string; label: string; group: string };
-
-const chunks: Chunk[] = [];
-let rest = page.rendered?.html ?? '';
-for (const s of staffSections) {
-  const marker = `<div data-staff-slot="${s.staffGroup}"></div>`;
-  const idx = rest.indexOf(marker);
-  if (idx === -1) continue;
-  chunks.push({ type: 'html', html: rest.slice(0, idx) });
-  chunks.push({ type: 'staff', id: s.id, label: s.label, group: s.staffGroup! });
-  rest = rest.slice(idx + marker.length);
-}
-chunks.push({ type: 'html', html: rest });
 
 const navSections = sections.map(({ id, label }) => ({ id, label }));
 ---
@@ -67,28 +56,26 @@ const navSections = sections.map(({ id, label }) => ({ id, label }));
     </header>
 
     <div class="prose">
-      {chunks.map((chunk) =>
-        chunk.type === 'html' ? (
-          <Fragment set:html={chunk.html} />
-        ) : (
-          <section class="staff-section">
-            <h2 id={chunk.id}>{chunk.label}</h2>
-            <div class="grid grid--3">
-              {staff
-                .filter((m) => m.data.group === chunk.group)
-                .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
-                .map((m) => (
-                  <StaffCard
-                    name={m.data.name}
-                    role={m.data.role}
-                    bio={m.data.bio}
-                    photo={m.data.photo}
-                  />
-                ))}
-            </div>
-          </section>
-        ),
-      )}
+      <Content />
+
+      {staffSections.map((section) => (
+        <section class="staff-section">
+          <h2 id={section.id}>{section.label}</h2>
+          <div class="grid grid--3">
+            {staff
+              .filter((m) => m.data.group === section.staffGroup)
+              .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+              .map((m) => (
+                <StaffCard
+                  name={m.data.name}
+                  role={m.data.role}
+                  bio={m.data.bio}
+                  photo={m.data.photo}
+                />
+              ))}
+          </div>
+        </section>
+      ))}
     </div>
 
     <ChildLinks children={childLinks} />

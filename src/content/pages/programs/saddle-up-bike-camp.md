@@ -7,15 +7,15 @@ sourceUrl: "https://washcobikes.org/programs/saddle_up_bike_camp"
 sections:
   - id: faq
     label: "Camps FAQ"
+  - id: gallery
+    label: "Photo Gallery"
   - id: instructors
     label: "Meet Our Instructors"
     staffGroup: instructor
-  - id: gallery
-    label: "Photo Gallery"
 draft: false
 ---
 
-[![](../../../assets/images/Register2026.png)](https://washcobikes.wufoo.com/forms/z1rqehgv0smnd3h/)
+[![Register for 2026 summer bike camps](../../../assets/images/Register2026.png)](https://washcobikes.wufoo.com/forms/z1rqehgv0smnd3h/)
 
 ## Summer Bike Camps
 
@@ -133,7 +133,7 @@ Here is all the paperwork you need to register your child for a summer bike cam
 * Register on line and pay in full or a deposit with final payment due June 1st
 * Fill out the forms online and include a head shot photo of your child registering.
 
-[![](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/zcdhh020mjeuyc/)
+[![Click here to register](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/zcdhh020mjeuyc/)
 
 We also need forms to have in our files. Please fill out one set of forms
 
@@ -225,9 +225,8 @@ Qualifications for a scholarship include, but are not limited to:
 
 **A:** This is a decision for you as a parent needs to make. Please understand the kids are doing a lot of riding each day. The first three days are spent working on skills and incorporating them into riding. Missing camp during these days makes it hard to keep up on the final two days they are riding. much of the day.
 
-<div data-staff-slot="instructor"></div>
 <h2 id="gallery">Photo Gallery</h2>
 
 ## Here are a few pictures from the past Camps
 
-![](../../../assets/images/20190627_120530.jpg)![](../../../assets/images/20190626_140557.jpg)![](../../../assets/images/2019_BC_DRILLS.jpg)![](../../../assets/images/ENJOING_A_TREAT.jpg)![](../../../assets/images/20190628_103813.jpg)![](../../../assets/images/20190627_130045.jpg)![](../../../assets/images/20190625_140826.jpg)![](../../../assets/images/2019_TIGARD_BC.jpg)![](../../../assets/images/20190620_134305.jpg)![](../../../assets/images/20190618_121245.jpg)
+![Campers serving food at a community event](../../../assets/images/20190627_120530.jpg)![Campers cooling off in a park splash fountain](../../../assets/images/20190626_140557.jpg)![Campers in yellow shirts riding a cone course in a parking lot](../../../assets/images/2019_BC_DRILLS.jpg)![Campers sharing ice cream around a table on a camp outing](../../../assets/images/ENJOING_A_TREAT.jpg)![Campers playing on swings at a neighbourhood park](../../../assets/images/20190628_103813.jpg)![Campers playing table tennis indoors during a camp outing](../../../assets/images/20190627_130045.jpg)![Campers and a camp leader taking a break at a cafe](../../../assets/images/20190625_140826.jpg)![A group of campers in yellow camp shirts posing together outdoors](../../../assets/images/2019_TIGARD_BC.jpg)![Campers cheering at a bowling alley with helmets stacked on the tables](../../../assets/images/20190620_134305.jpg)![Campers eating lunch together indoors](../../../assets/images/20190618_121245.jpg)
