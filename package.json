@@ -13,5 +13,9 @@
   },
   "dependencies": {
     "astro": "^7.2.1"
+  },
+  "devDependencies": {
+    "pa11y-ci": "^4.1.1",
+    "wait-on": "^9.1.0"
   }
 }

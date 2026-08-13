@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Cancel superseded runs on the same branch.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Single source of truth, shared with Netlify and mise.
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # --- Fast structural checks (no browser) ---------------------------
+
+      - name: Alt text on every content image
+        run: python3 scripts/apply-alt-text.py --check
+
+      - name: Unresolved Astro image placeholders
+        # Markdown rendered with `set:html` instead of <Content /> ships
+        # `<img __ASTRO_IMAGE_=...>` with no src, so the image never renders.
+        run: |
+          if grep -rq "__ASTRO_IMAGE_" dist/; then
+            echo "::error::Unresolved __ASTRO_IMAGE_ placeholders in dist/ —"\
+                 "render markdown via <Content />, not set:html."
+            grep -rlo "__ASTRO_IMAGE_" dist/
+            exit 1
+          fi
+
+      - name: Redirect coverage
+        # Checked against the committed snapshot so CI doesn't depend on the
+        # live site. Refresh with: verify-redirects.py --snapshot
+        run: python3 scripts/verify-redirects.py
+
+      # --- Accessibility (real browser, WCAG 2.1 AA) ---------------------
+
+      - name: Serve built site
+        # --background daemonises; a plain `&` leaves the step's shell owning a
+        # foreground process and the run never advances.
+        run: |
+          npx astro preview --background --port 4321
+          npx wait-on http://localhost:4321 --timeout 60000
+
+      - name: Accessibility audit
+        run: npx pa11y-ci --config .pa11yci.json
+
+      - name: Stop preview server
+        if: always()
+        run: npx astro preview stop || true
+
+      - name: Upload build output
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
