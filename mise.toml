@@ -35,11 +35,60 @@ description = "Remove build output and generated types"
 run = "rm -rf dist .astro"
 
 # --- Verification -----------------------------------------------------------
+# These mirror .github/workflows/ci.yml. `mise run ci` runs what CI runs, so a
+# green local run should mean a green pipeline.
 
 [tasks.verify]
 description = "Check every live-site URL resolves to a route or a redirect"
 depends = ["build"]
 run = "python scripts/verify-redirects.py"
+
+[tasks."verify:live"]
+description = "Same as verify, but against the live sitemap instead of the snapshot"
+depends = ["build"]
+run = "python scripts/verify-redirects.py --live"
+
+[tasks.alt]
+description = "Check every content image has alt text"
+run = "python scripts/apply-alt-text.py --check"
+
+[tasks.placeholders]
+description = "Fail if unresolved Astro image placeholders reached the build"
+depends = ["build"]
+run = """
+if grep -rq "__ASTRO_IMAGE_" dist/; then
+  echo "Unresolved __ASTRO_IMAGE_ in dist/ - render markdown via <Content />, not set:html:"
+  grep -rlo "__ASTRO_IMAGE_" dist/
+  exit 1
+fi
+echo "No unresolved image placeholders."
+"""
+
+[tasks.a11y]
+description = "WCAG 2.1 AA audit of every route with pa11y (needs Chrome)"
+depends = ["build"]
+# `astro preview` daemonises with --background, so stop any stale server first:
+# a leftover one on another port silently serves an old build and the audit
+# reports on stale HTML.
+run = """
+npx astro preview stop >/dev/null 2>&1 || true
+npx astro preview --background --port 4321
+npx wait-on http://localhost:4321 --timeout 60000
+npx pa11y-ci --config .pa11yci.json
+STATUS=$?
+npx astro preview stop >/dev/null 2>&1 || true
+exit $STATUS
+"""
+
+[tasks.ci]
+description = "Everything CI runs: build, alt text, placeholders, redirects, a11y"
+run = [
+  "mise run build",
+  "mise run alt",
+  "mise run placeholders",
+  "mise run verify",
+  "mise run a11y",
+]
 
 # --- Content migration ------------------------------------------------------
 # Only needed when re-pulling from the live site. Day-to-day editing happens in
