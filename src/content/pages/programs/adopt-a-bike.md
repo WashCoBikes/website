@@ -31,7 +31,7 @@ Each year, we launch our “Adopt a Bike Program,” which stands as our largest
 * $200 sponsors an adult bike package.
 * Any amount is appreciated and helps us reach more people in need.
 
-[![](../../../assets/images/Donate_button.png)](https://washcobikes.wufoo.com/forms/x184wxtx1rpujow/)
+[![Donate now](../../../assets/images/Donate_button.png)](https://washcobikes.wufoo.com/forms/x184wxtx1rpujow/)
 
 ## Enlist your employer
 
@@ -40,13 +40,13 @@ Ask your employer to if they use a matching donor platform such as Benevity. If 
 Your employer may also choose to sponsor a specific number of bikes, helmets, or locks to support those  
 who need them. Some employers will even sponsor a bike rodeo for the children of employees.
 
-[![](../../../assets/images/Corporate_Donate_Button.png)](https://washcobikes.wufoo.com/forms/z9uo0iu0fv4zfb/)
+[![Corporate donations](../../../assets/images/Corporate_Donate_Button.png)](https://washcobikes.wufoo.com/forms/z9uo0iu0fv4zfb/)
 
 ## Volunteer
 
 Help refurbish bikes! Volunteer hours are crucial to the success of this program. Your time and skills can directly help prepare bikes for distribution.
 
-[![](../../../assets/images/Volunteer_Button.png)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
+[![Volunteer](../../../assets/images/Volunteer_Button.png)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
 
 ## Spread the Word
 

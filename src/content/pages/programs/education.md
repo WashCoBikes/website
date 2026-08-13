@@ -25,7 +25,7 @@ draft: false
 
 <h2 id="repair-clinics">Bike Repair Clinics</h2>
 
-![](../../../assets/images/bike_clinic_stock_photo.jpg)
+![A mechanic in gloves fitting a tyre onto a bicycle wheel](../../../assets/images/bike_clinic_stock_photo.jpg)
 
 Want to learn how to adjust, clean, and repair your bicycle in a friendly, encouraging and instructive atmosphere? Bring your bike to one of our Bike Repair Clinics, and our qualified instructors will teach you how to maintain and fix it!
 
@@ -55,7 +55,7 @@ Grab a friend and have some fun!
 
 Clinics are the third Tuesday of every month, 5:30-7:00 PM.  Specific dates are on the registration form.
 
-[**![](../../../assets/images/images__2_.jpg)**](https://washcobikes.wufoo.com/forms/zj5khbd0nh9xar/)
+[**![Click here to register](../../../assets/images/images__2_.jpg)**](https://washcobikes.wufoo.com/forms/zj5khbd0nh9xar/)
 
 <h2 id="smart-cycling">Smart Cycling</h2>
 
@@ -96,9 +96,9 @@ Registration closes 7 days before each workshop to allow time for students to co
 
 **Course fee:** The full course value is $250. WashCo Bikes subsidizes this workshop so riders pay **$75**. Grants and scholarships may be available when cost is a barrier.
 
-![](../../../assets/images/20160522_145512.jpg)  ![](../../../assets/images/20160522_135424.jpg)
+![An instructor leading a Smart Cycling class through riding drills on a covered court](../../../assets/images/20160522_145512.jpg)  ![An instructor demonstrating bike handling to Smart Cycling students](../../../assets/images/20160522_135424.jpg)
 
-[![](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/q1epnkj31cz4pxu/)
+[![Click here to register](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/q1epnkj31cz4pxu/)
 
 <h2 id="rodeos">Skills and Safety Rodeos</h2>
 
@@ -114,11 +114,11 @@ Pricing for a rodeo is $250.00. Once you have filled out the registration page, 
 
 date and time for your event.
 
-![](../../../assets/images/admujeres_5.jpg)
+![A volunteer demonstrating how to pump up a bicycle tire during a class](../../../assets/images/admujeres_5.jpg)
 
-![](../../../assets/images/IMAG0527.jpg)
+![Children and parents with bicycles at a learn-to-ride session outside a school](../../../assets/images/IMAG0527.jpg)
 
-[![](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/mgkxazx1fo7a0a/)
+[![Click here to register](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/mgkxazx1fo7a0a/)
 
 <h2 id="learn-to-ride">Learn to Ride</h2>
 
@@ -166,4 +166,4 @@ Register and pay using the button below. A WashCo Bikes cycling instructor will 
 * Saturday September 12
 * Saturday November 14
 
-[![](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/m1dwspeh1uk2ygj/)
+[![Click here to register](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/m1dwspeh1uk2ygj/)

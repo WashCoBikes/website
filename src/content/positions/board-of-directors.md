@@ -47,4 +47,4 @@ Time commitment: monthly board meetings 90 minutes
 
 Board activities, committee and event participation: monthly 4-6 hours
 
-[![](../../assets/images/apply_now_button.png)](https://washcobikes.wufoo.com/forms/ry0m8911wccoqf/)
+[![Apply now to join the Board of Directors](../../assets/images/apply_now_button.png)](https://washcobikes.wufoo.com/forms/ry0m8911wccoqf/)

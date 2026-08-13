@@ -11,7 +11,7 @@ draft: false
 
 If you have the time and are interested in making an ongoing commitment to WashCo Bikes, consider volunteering with us. This is a great way to get involved with a fun, diverse, and close-knit group of people who are working together to make bicycling better in Washington County.
 
-[![](../../../assets/images/pngkey_com-sign-up-button-png-3341582.jpg)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
+[![Sign up for a volunteer opportunity](../../../assets/images/pngkey_com-sign-up-button-png-3341582.jpg)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
 
 Volunteer orientation is held on the first and third Monday of each month.
 

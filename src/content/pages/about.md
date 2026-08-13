@@ -66,6 +66,6 @@ WashCo Bikes is in a growth phase. We are seeking individuals who are passionate
 
 WashCo Bikes Board of Directors plays an important and very "hands on" role in the operation and promotion of the organization and its mission. We are a working board in addition to long term planning and management of the organization. Formal board meetings are held once a month. As the organization is still quite small, there are opportunities/needs for board members to take on additional volunteer duties, or pursue special projects outside our formal meetings.
 
-[![](../../assets/images/apply_now_button.png)](https://washcobikes.wufoo.com/forms/ry0m8911wccoqf/)
+[![Apply now to join the Board of Directors](../../assets/images/apply_now_button.png)](https://washcobikes.wufoo.com/forms/ry0m8911wccoqf/)
 
 <div data-staff-slot="staff"></div>
