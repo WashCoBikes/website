@@ -1,0 +1,169 @@
+---
+import { navItems } from '../lib/nav';
+import site from '../data/site.json';
+import logo from '../assets/images/WashCo_Logo.png';
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(href + '/');
+}
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="WashCo Bikes — home">
+      <img src={logo.src} width="140" height="51" alt="WashCo Bikes logo" />
+    </a>
+
+    <nav class="main-nav" aria-label="Primary" id="main-nav">
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={['nav-link', { 'is-active': isActive(item.href) }]}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      data-nav-toggle
+    >
+      <span class="sr-only">Menu</span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy-800);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+    gap: 1rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .brand img {
+    height: 40px;
+    width: auto;
+  }
+  .main-nav {
+    display: none;
+  }
+  .nav-list {
+    display: flex;
+    gap: 0.15rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.12s ease;
+  }
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+  .nav-link.is-active {
+    background: var(--gold-500);
+    color: var(--navy-900);
+  }
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: 0;
+    padding: 0.6rem;
+    cursor: pointer;
+  }
+  .nav-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  @media (max-width: 767px) {
+    .main-nav {
+      position: absolute;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      background: var(--navy-800);
+      box-shadow: var(--shadow-lg);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.5rem var(--gutter) 1rem;
+    }
+    .main-nav.is-open { display: block; }
+    .nav-list { flex-direction: column; }
+    .nav-link {
+      display: block;
+      padding: 0.85rem 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0;
+      font-size: 1.05rem;
+    }
+    .nav-link.is-active { background: transparent; color: var(--gold-400); }
+  }
+
+  @media (min-width: 768px) {
+    .main-nav { display: block; }
+    .nav-toggle { display: none; }
+    .nav-link { padding: 0.5rem 0.75rem; }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.getElementById('main-nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('is-open') ?? false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>

@@ -1,0 +1,58 @@
+---
+import site from '../data/site.json';
+const { address = site.address, hours = site.hours } = Astro.props;
+---
+
+<div class="hours-widget">
+  <h2 class="hw-title">Visit the shop</h2>
+  <p class="hw-address">
+    {address.street}<br />
+    {address.city}, {address.state} {address.zip}
+  </p>
+  <p class="hw-phone">
+    <a href={`tel:+1${site.phone.replace(/[^0-9]/g, '')}`}>{site.phone}</a>
+  </p>
+  <dl class="hw-hours">
+    {hours.days.map((d) => (
+      <div class="hw-row">
+        <dt>{d.day}</dt>
+        <dd>{d.open} – {d.close}</dd>
+      </div>
+    ))}
+  </dl>
+  {hours.note && <p class="hw-note">{hours.note}</p>}
+</div>
+
+<style>
+  .hours-widget {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .hw-title {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  .hw-address { margin: 0 0 0.5rem; line-height: 1.5; }
+  .hw-phone { margin: 0 0 1rem; }
+  .hw-phone a { font-weight: 700; }
+  .hw-hours {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0 0 1rem;
+  }
+  .hw-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.35rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.95rem;
+  }
+  .hw-row dt { font-weight: 700; }
+  .hw-row dd { margin: 0; color: var(--text-soft); }
+  .hw-note { margin: 0; font-size: 0.85rem; color: var(--text-soft); font-style: italic; }
+</style>
