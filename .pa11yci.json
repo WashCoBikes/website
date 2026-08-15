@@ -1,0 +1,36 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 30000,
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    "ignore": []
+  },
+  "urls": [
+    "http://localhost:4321/",
+    "http://localhost:4321/about",
+    "http://localhost:4321/about/affiliates",
+    "http://localhost:4321/contact",
+    "http://localhost:4321/events",
+    "http://localhost:4321/get-involved",
+    "http://localhost:4321/get-involved/big-wheelies",
+    "http://localhost:4321/get-involved/join-or-donate",
+    "http://localhost:4321/get-involved/more-ways-to-support",
+    "http://localhost:4321/get-involved/open-positions",
+    "http://localhost:4321/get-involved/volunteer-events",
+    "http://localhost:4321/programs",
+    "http://localhost:4321/programs/adopt-a-bike",
+    "http://localhost:4321/programs/education",
+    "http://localhost:4321/programs/saddle-up-bike-camp",
+    "http://localhost:4321/resources",
+    "http://localhost:4321/resources/partners",
+    "http://localhost:4321/shop",
+    "http://localhost:4321/shop/es",
+    "http://localhost:4321/shop/mechanics",
+    "http://localhost:4321/shop/rates"
+  ]
+}
