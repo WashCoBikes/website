@@ -17,7 +17,7 @@ draft: false
 
 ## Board of Directors
 
-![](../../assets/images/Headshot1-NB-1x1_200.jpg)
+![Nick Baker](../../assets/images/Headshot1-NB-1x1_200.jpg)
 
 **Nick Baker-**
 
@@ -31,7 +31,7 @@ Nick is a believer in the beneficent power of active transportation and aims t
 
 Tricia has been a life-long cyclist, enjoying biking to work and recreational riding with friends and local cycling groups.  Cycling is also part of her commitment to health, well-being, and environmental stewardship. As a public health professional, she's well aware of the benefits of active transportation and has promoted and supported cycling programs, policies, and organizations across the metro region. When not biking you can find her hiking with her dog, kayaking, or playing pickleball. Since moving to the area, she's been volunteering at WashCo Bikes helping with bike cleaning, summer camps, bike rodeos, and other bike events. She's also the current newsletter editor.
 
-![](../../assets/images/WIN_20220707_23_30_52_Pro.jpg)
+![John Haide](../../assets/images/WIN_20220707_23_30_52_Pro.jpg)
 
 **John Haide**
 
@@ -39,7 +39,7 @@ Tricia has been a life-long cyclist, enjoying biking to work and recreational ri
 
 I have retired after a career as an electrical engineer with the Bonneville Power Administration then working part time for REI in Hillsboro for almost 13 years. I grew up in Sherwood, OR and have always loved the outdoors. In addition to bicycling, I enjoy photography, kayaking, hiking, gardening and woodworking. I have lived in Hillsboro since 1989. I have been married to my wife, Liz for almost 47 years and we have a daughter, son in law and granddaughters here in town and a son and daughter in law in southern California. My biggest interest in bicycling is to see more people cycling, especially as a means to get around our community. I want to work to promote a more comfortable, safe and complete network of cycling infrastructure in our community that is accessible to people of all ages and abilities.
 
-![](../../assets/images/EMILY_SHRIVER.jpg)
+![Emily Shriver](../../assets/images/EMILY_SHRIVER.jpg)
 
 **Emily Shriver**
 
@@ -47,7 +47,7 @@ I have retired after a career as an electrical engineer with the Bonneville Powe
 
 ## Terry Wilson - Board Member, Health Care Overseer
 
-![](../../assets/images/TerryWilson.jpg)
+![Terry Wilson](../../assets/images/TerryWilson.jpg)
 
 I’m a retired electrical engineer. My semiconductor career spanned from (RAM) memory design to radio chips used in iPhones and GPS.  I’m constantly amazed at how the industry advanced from a few hundred devices on a chip in the 70’s, to millions of devices on a chip in the 20xx’s.
 
@@ -55,13 +55,13 @@ Bikes have been a constant throughout my life, first growing up on a small islan
 
 ## Wil Warren - Board Member
 
-![](../../assets/images/Picture2.jpg)
+![Wilbert (Wil) Warren](../../assets/images/Picture2.jpg)
 
 Wilbert (Wil) Warren is the Founder and CEO of I'm Hooked, Inc., a nonprofit dedicated to positive youth development through outdoor experiences. Growing up, he rode a bike—even though his first one was a girl's bike that he had to share with six siblings. He believes getting outdoors is essential for mental and physical well-being. Wil’s passion for community engagement led him to connect with WashCo Bikes four years ago when he brought a bike in for repair. With 30 years in social services, he is committed to teaching, coaching, and building relationships that empower individuals and strengthen communities.
 
 ## Steve Boughton- Education Coordinator
 
-![](../../assets/images/2014-BoardMembershighres-SBoughton.jpg)
+![Steve Boughton](../../assets/images/2014-BoardMembershighres-SBoughton.jpg)
 
 Steve has been with the organization since January 2009, and served as the Board Chair from 2012 to 2023.
 
@@ -99,11 +99,11 @@ WashCo Bikes is in a growth phase. We are seeking individuals who are passionate
 
 WashCo Bikes Board of Directors plays an important and very "hands on" role in the operation and promotion of the organization and its mission. We are a working board in addition to long term planning and management of the organization. Formal board meetings are held once a month. As the organization is still quite small, there are opportunities/needs for board members to take on additional volunteer duties, or pursue special projects outside our formal meetings.
 
-[![](../../assets/images/apply_now_button.png)](https://washcobikes.wufoo.com/forms/ry0m8911wccoqf/)
+[![Apply now to join the Board of Directors](../../assets/images/apply_now_button.png)](https://washcobikes.wufoo.com/forms/ry0m8911wccoqf/)
 
 **Executive Director- Joe Kurmaskie**
 
-![](../../assets/images/Joe_Kurmaskie.jpg)
+![Joe Kurmaskie, Executive Director](../../assets/images/Joe_Kurmaskie.jpg)
 
 Joe *Metal Cowboy* Kurmaskie joins the rebranded WashCo Bikes, as the executive director. "I'm pumped to invigorate the suburbs and outlying community  west of Portland with exciting new programs while expanding quality existing ones.
 
@@ -126,7 +126,7 @@ With 13 cities, Metro, ODOT and Washington County LUT (Department of Land Use an
 
 ## Nick Baker
 
-![](../../assets/images/Headshot1-NB-1x1_200.jpg)
+![Nick Baker](../../assets/images/Headshot1-NB-1x1_200.jpg)
 
 **Vice Chair-Board Member**
 
@@ -136,7 +136,7 @@ Nick is a believer in the beneficent power of active transportation and aims to 
 
 ## Emily Shriver
 
-![](../../assets/images/es9SM.jpg)
+![Emily Shriver](../../assets/images/es9SM.jpg)
 
 **Board Secretary**
 
@@ -146,7 +146,7 @@ In the non-profit area she brings experience in mentoring and teaching teenagers
 
 ## Terry Wilson
 
-![](../../assets/images/TerryWilson.jpg)
+![Terry Wilson](../../assets/images/TerryWilson.jpg)
 
 Board Member
 
@@ -158,7 +158,7 @@ Like everyone else who goes to work everyday, I decided there had to be a better
 
 ## Wilbert Warren, Board member
 
-![](../../assets/images/Picture2.jpg)
+![Wilbert (Wil) Warren](../../assets/images/Picture2.jpg)
 
  Wilbert (Wil) Warren, is the Founder and Chief Executive Officer of I'm Hooked Inc. Wil's passion for fishing and the appreciation of the great outdoors began during his childhood years of fishing with his father. He has a strong passion for teaching, coaching and developing individuals to believe in themselves so they can reach their full potential. Wil believes in the mission of WashCo Bikes and will bring his passion to engaging youth and families to this program.
 
@@ -168,7 +168,7 @@ Wil is also a "Cycling Instructor" with LA Fitness. He enjoys providing the skil
 
 ## John Haide
 
-![](../../assets/images/WIN_20220707_23_30_52_Pro.jpg)
+![John Haide](../../assets/images/WIN_20220707_23_30_52_Pro.jpg)
 
 Board member
 

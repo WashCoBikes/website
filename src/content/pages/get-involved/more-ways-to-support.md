@@ -46,7 +46,7 @@ For three years, WashCo BTC has sponsored an Adopt-A-Bike program for the holida
 
 LCI certified instructors worked with these young women from [Adelante Mujeres](http://www.adelantemujeres.org/) "Chicas" program on basic bike safety and skills.  What's more, these girls have agreed to attend Saturday classes at Fern Hill Elementary school in Forest Grove where we will have two more classes for the Chica's. This time these girls will be helping the instructors teach. Can you think of a better way to start a leadership program?
 
-![](../../../assets/images/admujeres_1.jpg)![](../../../assets/images/admujeres_3.jpg)![](../../../assets/images/admujeres_5.jpg)
+![Participants from Adelante Mujeres holding their course completion certificates](../../../assets/images/admujeres_1.jpg)![An instructor showing a group how to inspect a bicycle tire](../../../assets/images/admujeres_3.jpg)![A volunteer demonstrating how to pump up a bicycle tire during a class](../../../assets/images/admujeres_5.jpg)
 
 ## Hugh's Story
 
