@@ -243,3 +243,11 @@ th { background: var(--navy-50); color: var(--navy-800); }
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
   .grid--4 { grid-template-columns: repeat(4, 1fr); }
 }
+
+/* Card photos: same 4:3 frame regardless of the source image's shape */
+.prose .card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: 0 0 0.75rem;
+}

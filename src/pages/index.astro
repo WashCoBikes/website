@@ -1,8 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HoursWidget from '../components/HoursWidget.astro';
-import { navItems } from '../lib/nav';
 import site from '../data/site.json';
 
 const images = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp}', {
@@ -13,7 +12,22 @@ function resolveImage(name: string) {
   return images[`../assets/images/${name}`];
 }
 const heroImg = resolveImage(site.hero.image);
-const explore = navItems.filter((n) => n.href !== '/');
+// Collapse consecutive days with the same hours: "Monday – Saturday".
+const hourGroups: { days: string; time: string }[] = [];
+for (const d of site.hours.days) {
+  const time = d.close ? `${d.open} – ${d.close}` : d.open;
+  const last = hourGroups.at(-1);
+  if (last && last.time === time) {
+    last.days = `${last.days.split(' – ')[0]} – ${d.day}`;
+  } else {
+    hourGroups.push({ days: d.day, time });
+  }
+}
+
+// The body below the promo is Markdown, editable like any other page.
+const home = await getEntry('pages', 'home');
+if (!home) throw new Error('Missing src/content/pages/home.md');
+const { Content } = await render(home);
 ---
 
 <BaseLayout title={site.name}>
@@ -53,35 +67,37 @@ const explore = navItems.filter((n) => n.href !== '/');
     </div>
   </section>
 
-  <section class="home-grid" aria-label="Visit and stay in touch">
-    <div class="wrap home-grid-inner">
-      <HoursWidget />
-      <div class="newsletter card">
-        <h2>{site.newsletter.heading}</h2>
-        <p>{site.newsletter.body}</p>
-        <!-- TODO: newsletter signup — live form deferred (VerticalResponse/Wufoo). -->
-        <form class="newsletter-form" action="#" onsubmit="return false;">
-          <label class="sr-only" for="newsletter-email">Email address</label>
-          <input id="newsletter-email" type="email" placeholder="you@example.org" required />
-          <button class="btn btn--primary" type="submit" disabled>Coming soon</button>
-        </form>
-      </div>
+  <section class="home-body">
+    <div class="wrap prose">
+      <Content />
     </div>
   </section>
 
-  <section class="explore" aria-label="Explore the site">
-    <div class="wrap">
-      <h2>Explore</h2>
-      <ul class="explore-grid">
-        {explore.map((n) => (
-          <li>
-            <a class="explore-card card" href={n.href}>
-              <span class="explore-arrow" aria-hidden="true">→</span>
-              {n.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+  <section class="visit-band" aria-labelledby="visit">
+    <div class="wrap visit-band-inner">
+      <div class="visit-band-copy">
+        <h2 id="visit">Visit us in Hillsboro</h2>
+        <p>
+          {site.address.street}, {site.address.city}, {site.address.state} {site.address.zip}
+          <span aria-hidden="true"> · </span>
+          <a href={`tel:+1${site.phone.replace(/[^0-9]/g, '')}`}>{site.phone}</a>
+          <span aria-hidden="true"> · </span>
+          <a href={`mailto:${site.shopEmail}`}>{site.shopEmail}</a>
+        </p>
+        <ul class="visit-band-hours">
+          {hourGroups.map((g) => (
+            <li><strong>{g.days}:</strong> {g.time}</li>
+          ))}
+        </ul>
+      </div>
+      <a class="btn btn--primary" href="/shop">Retail Shop</a>
+    </div>
+  </section>
+
+  <section class="events-band">
+    <div class="wrap events-band-inner">
+      <h2>Classes, rides, clinics &amp; community events.</h2>
+      <a class="btn btn--primary" href="/events">See upcoming events</a>
     </div>
   </section>
 </BaseLayout>
@@ -159,61 +175,38 @@ const explore = navItems.filter((n) => n.href !== '/');
   .promo-body { margin: 0 0 1rem; color: var(--text-soft); }
   .promo-action { display: flex; align-items: center; }
 
-  .home-grid { padding: 1.5rem 0; }
-  .home-grid-inner {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: 1fr;
-  }
-  .newsletter h2 { margin-top: 0; }
-  .newsletter-form {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-  .newsletter-form input {
-    flex: 1 1 12rem;
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font: inherit;
-  }
-  .sr-only {
-    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-    overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
-  }
+  .home-body { padding: 1.5rem 0 1rem; }
+  /* .prose caps width at 46rem for readable line length, which also squeezed
+     the card grid. Let the homepage body use the full page width, and keep
+     only the running text at a readable measure. */
+  .home-body .prose { max-width: var(--maxw); }
+  .home-body .prose > :global(:not(.grid)) { max-width: 46rem; }
 
-  .explore { padding: 1.5rem 0 3rem; }
-  .explore-grid {
-    display: grid;
-    gap: 0.9rem;
-    grid-template-columns: repeat(2, 1fr);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .explore-card {
+  .visit-band { background: var(--navy-800); color: #fff; padding: 2rem 0; }
+  .visit-band-inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem;
-    text-decoration: none;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.05rem;
-    color: var(--navy-800);
-    padding: 1.15rem 1.25rem;
+    justify-content: space-between;
+    gap: 1rem 2rem;
   }
-  .explore-arrow { color: var(--gold-700); transition: transform 0.15s ease; }
-  .explore-card:hover .explore-arrow { transform: translateX(4px); }
-  .explore-card:hover { color: var(--navy-600); }
+  .visit-band h2 { color: #fff; margin: 0 0 0.35rem; scroll-margin-top: calc(var(--header-h) + 1rem); }
+  .visit-band p { margin: 0 0 0.5rem; color: rgba(255, 255, 255, 0.85); }
+  .visit-band a:not(.btn) { color: #fff; white-space: nowrap; }
+  .visit-band-hours { list-style: none; margin: 0; padding: 0; }
+  .visit-band-hours strong { color: var(--gold-400); }
+
+  .events-band { background: var(--navy-900); color: #fff; padding: 2rem 0; }
+  .events-band-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .events-band h2 { color: #fff; margin: 0; }
 
   @media (min-width: 700px) {
     .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
-    .home-grid-inner { grid-template-columns: 1fr 1fr; }
-    .explore-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (min-width: 1000px) {
-    .explore-grid { grid-template-columns: repeat(4, 1fr); }
   }
 </style>

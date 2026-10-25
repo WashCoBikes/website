@@ -3,7 +3,7 @@
   "legalName": "Washington County Community Bicycle Center",
   "dba": "Washington County Bicycle Transportation Coalition",
   "mission": "We make bicyclists and bicycling better in Washington County — through education, encouragement, and advocacy.",
-  "description": "WashCo Bikes is a 501(c)(3) nonprofit making bicyclists and bicycling better in Washington County, Oregon through education, encouragement, and advocacy.",
+  "description": "WashCo Bikes is a 501(c)(3) nonprofit making bicyclists and bicycling better in Washington County, Oregon.  Through education, encouragement, and advocacy, we create practical next steps for people who want to ride, return to riding, find a bicycle, or help build better bicycling conditions.",
   "address": {
     "street": "137 NE 3rd Ave.",
     "city": "Hillsboro",
@@ -14,7 +14,7 @@
   "email": "info@washcobikes.org",
   "shopEmail": "Shop@washcobikes.org",
   "hours": {
-    "note": "Hours effective September 15, 2025",
+    "note": "Hours effective September 18, 2026",
     "days": [
       { "day": "Monday", "open": "10:00 AM", "close": "5:00 PM" },
       { "day": "Tuesday", "open": "10:00 AM", "close": "5:00 PM" },
@@ -22,7 +22,7 @@
       { "day": "Thursday", "open": "10:00 AM", "close": "5:00 PM" },
       { "day": "Friday", "open": "10:00 AM", "close": "5:00 PM" },
       { "day": "Saturday", "open": "10:00 AM", "close": "5:00 PM" },
-      { "day": "Sunday", "open": "12:00 PM", "close": "4:00 PM" }
+      { "day": "Sunday", "open": "closed", "close": "" }
     ]
   },
   "social": {
@@ -31,21 +31,18 @@
   },
   "hero": {
     "heading": "We make bicyclists and bicycling better in Washington County.",
-    "body": "Through education, encouragement, and advocacy.",
+    "body": "Through education, encouragement, and advocacy, we create practical next steps for people who want to ride, return to riding, find a bicycle, or help build better bicycling conditions.",
     "image": "TdP_riders.jpg",
-    "cta": { "label": "Volunteer With Us", "href": "/get-involved" }
+    "cta": { "label": "DONATE", "href": "/get-involved/join-or-donate" }
   },
   "promo": {
-    "heading": "Bike Hillsboro 2026",
+    "heading": "Adopt-a-Bike 2026",
     "details": [
-      "Saturday, August 8",
-      "Check-in @ WashCo Bike Shop: 9:15 AM",
-      "Ride starts: 10 AM · Ends at noon"
     ],
-    "body": "Join a family-friendly bike ride touring Hamby, Griffin Oaks & Bagley parks. FREE! No pre-registration required! Kids activities & tune-ups available along the way!",
+    "body": "Support our annual giving campaign.  As little as $100 allows us to give a child their own bike, helmet, and lock.",
     "cta": {
-      "label": "Volunteer for Bike Hillsboro",
-      "href": "https://washcobikes.wufoo.com/forms/volunteer-for-bike-hillsboro-aug-8-2026/"
+      "label": "Support Adopt-a-Bike",
+      "href": "/get-involved/join-or-donate"
     }
   },
   "newsletter": {
