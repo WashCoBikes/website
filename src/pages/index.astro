@@ -1,7 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 import site from '../data/site.json';
 
 const images = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp}', {
@@ -31,24 +31,16 @@ const { Content } = await render(home);
 ---
 
 <BaseLayout title={site.name}>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="hero-eyebrow">Washington County · Oregon</p>
-        <h1>{site.hero.heading}</h1>
-        <p class="hero-body">{site.hero.body}</p>
-        <div class="hero-cta">
-          <a class="btn btn--primary" href={site.hero.cta.href}>{site.hero.cta.label}</a>
-          <a class="btn btn--ghost-light" href="/contact">Contact Us</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        {heroImg ? (
-          <Image src={heroImg} alt="Cyclists on a community ride" class="hero-img" loading="eager" />
-        ) : null}
-      </div>
-    </div>
-  </section>
+  <Hero
+    eyebrow="Washington County · Oregon"
+    title={site.hero.heading}
+    lede={site.hero.body}
+    image={heroImg}
+    imageAlt="Cyclists on a community ride"
+  >
+    <a class="btn btn--primary" href={site.hero.cta.href}>{site.hero.cta.label}</a>
+    <a class="btn btn--ghost-light" href="/contact">Contact Us</a>
+  </Hero>
 
   <section class="promo" aria-label="Current promo">
     <div class="wrap promo-inner">
@@ -103,55 +95,6 @@ const { Content } = await render(home);
 </BaseLayout>
 
 <style>
-  .hero {
-    background: linear-gradient(160deg, var(--navy-900) 0%, var(--navy-800) 55%, var(--navy-700) 100%);
-    color: #fff;
-    padding: clamp(2.5rem, 6vw, 5rem) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(60% 80% at 85% 20%, rgba(255, 188, 25, 0.18), transparent 60%);
-    pointer-events: none;
-  }
-  .hero-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-eyebrow {
-    color: var(--gold-400);
-    font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-size: 0.82rem;
-    margin-bottom: 0.75rem;
-  }
-  .hero-copy h1 { color: #fff; margin-bottom: 0.5rem; }
-  .hero-body {
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 34ch;
-  }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
-  .hero-media { display: flex; justify-content: center; }
-  .hero-img {
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
-    width: 100%;
-    max-width: 30rem;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.12);
-  }
-
   .promo { padding: 1.5rem 0; }
   .promo-inner {
     display: grid;
@@ -205,8 +148,4 @@ const { Content } = await render(home);
     gap: 1rem;
   }
   .events-band h2 { color: #fff; margin: 0; }
-
-  @media (min-width: 700px) {
-    .hero-grid { grid-template-columns: 1.05fr 0.95fr; }
-  }
 </style>

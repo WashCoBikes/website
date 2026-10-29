@@ -25,6 +25,20 @@
       { "day": "Sunday", "open": "closed", "close": "" }
     ]
   },
+  "rates": {
+    "notes": [
+      "Prices listed are for labor only on the most requested services. Parts are extra.",
+      "Please call for an appointment on all service work."
+    ],
+    "items": [
+      { "service": "Fix a flat", "price": "$12.00", "note": "Does not need an appointment, but there may be a wait time." },
+      { "service": "Safety check", "price": "$50.00", "note": "" },
+      { "service": "Tune-up", "price": "$135.00", "note": "" },
+      { "service": "Derailleur adjustment (both)", "price": "$30.00", "note": "" },
+      { "service": "Wheel true", "price": "$40.00", "note": "" },
+      { "service": "Bike build", "price": "$100.00", "note": "" }
+    ]
+  },
   "social": {
     "facebook": "https://www.facebook.com/WashCoBikes/",
     "twitter": "https://twitter.com/WashCoBikes"

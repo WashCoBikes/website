@@ -1,0 +1,74 @@
+---
+// Service and repair rates, from `rates` in src/data/site.json.
+// Edited in the CMS under Site settings → Service rates.
+import site from '../data/site.json';
+const { rates = site.rates } = Astro.props;
+const tel = `tel:+1${site.phone.replace(/[^0-9]/g, '')}`;
+---
+
+<section class="rates-widget" aria-labelledby="rates">
+  <h2 id="rates" class="rw-title">Service and repair rates</h2>
+  {rates.notes.map((n) => <p class="rw-note">{n}</p>)}
+  <dl class="rw-list">
+    {rates.items.map((r) => (
+      <div class="rw-row">
+        <dt>
+          {r.service}
+          {r.note && <span class="rw-item-note">{r.note}</span>}
+        </dt>
+        <dd>{r.price}</dd>
+      </div>
+    ))}
+  </dl>
+  <p class="rw-contact">
+    Appointments: <a href={tel}>{site.phone}</a>
+    {site.shopEmail && (
+      <>
+        <span aria-hidden="true"> · </span>
+        Questions: <a href={`mailto:${site.shopEmail}`}>{site.shopEmail}</a>
+      </>
+    )}
+  </p>
+</section>
+
+<style>
+  .rates-widget {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    margin-top: 2.5rem;
+  }
+  .rw-title {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    scroll-margin-top: calc(var(--header-h) + 1rem);
+  }
+  .rw-note { margin: 0 0 0.35rem; font-size: 0.92rem; color: var(--text-soft); }
+  .rw-list {
+    display: grid;
+    gap: 0.25rem;
+    margin: 1rem 0;
+  }
+  .rw-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .rw-row dt { font-weight: 700; }
+  .rw-row dd { margin: 0; font-weight: 700; color: var(--navy-800); white-space: nowrap; }
+  .rw-item-note {
+    display: block;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    font-style: italic;
+  }
+  .rw-contact { margin: 0; font-size: 0.92rem; }
+  .rw-contact a { font-weight: 700; white-space: nowrap; }
+</style>

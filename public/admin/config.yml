@@ -28,6 +28,10 @@ collections:
       - { label: 'Order', name: order, widget: number, value_type: int, required: false, hint: 'Sort order within a section.' }
       - { label: 'Source URL', name: sourceUrl, widget: string, required: false, hint: 'Original page URL, kept for reference.' }
       - { label: 'Draft', name: draft, widget: boolean, default: false }
+      - { label: 'Summary', name: description, widget: text, required: false, hint: 'One or two sentences. Shown under the title when the page has a hero image, and used by search engines.' }
+      - { label: 'Hero image', name: heroImage, widget: image, required: false, hint: 'Optional. Adds a banner at the top of the page.' }
+      - { label: 'Show shop hours', name: showHours, widget: boolean, default: false, hint: 'Shows the address, phone and hours card (from Site settings) beside the page text.' }
+      - { label: 'Show service rates', name: showRates, widget: boolean, default: false, hint: 'Shows the service rates table (from Site settings) below the page text.' }
       - label: 'Sections'
         name: sections
         widget: list
@@ -38,22 +42,23 @@ collections:
         fields:
           - { label: 'Anchor id', name: id, widget: string }
           - { label: 'Label', name: label, widget: string }
-          - { label: 'Staff group', name: staffGroup, widget: select, required: false, options: [mechanic, instructor] }
+          - { label: 'Staff group', name: staffGroup, widget: select, required: false, options: [mechanic, instructor, board, executive, staff] }
       - { label: 'Content', name: body, widget: markdown }
 
   - name: staff
     label: Staff
     label_singular: Staff member
-    description: Mechanics and camp instructors.
+    description: Staff, board members, and core team volunteers.
     folder: src/content/staff
     create: true
     fields:
       - { label: 'Name', name: name, widget: string }
-      - { label: 'Role', name: role, widget: string, hint: 'e.g. Mechanic, Instructor, Camps Coordinator.' }
-      - { label: 'Group', name: group, widget: select, options: [mechanic, instructor] }
+      - { label: 'Role', name: role, widget: string, hint: 'e.g. Mechanic, Instructor, Board Chair.' }
+      - { label: 'Group', name: group, widget: select, options: [mechanic, instructor, board, executive, staff] }
       - { label: 'Order', name: order, widget: number, value_type: int, required: false }
       - { label: 'Photo', name: photo, widget: image, required: false, hint: 'Square headshot works best.' }
-      - { label: 'Bio', name: bio, widget: markdown, required: false }
+      - { label: 'Photo position', name: photoPosition, widget: string, required: false, hint: 'Optional. Which part of the photo to keep when it is cropped square, e.g. "left center" or "center top".' }
+      - { label: 'Bio', name: body, widget: markdown, required: false }
 
   - name: events
     label: Events
@@ -115,6 +120,23 @@ collections:
                   - { label: 'Day', name: day, widget: string }
                   - { label: 'Opens', name: open, widget: string }
                   - { label: 'Closes', name: close, widget: string }
+          - label: 'Service rates'
+            name: rates
+            widget: object
+            fields:
+              - label: 'Notes'
+                name: notes
+                widget: list
+                field: { label: 'Note', name: note, widget: string }
+                hint: 'Shown above the price list, one line each.'
+              - label: 'Services'
+                name: items
+                widget: list
+                summary: '{{service}} — {{price}}'
+                fields:
+                  - { label: 'Service', name: service, widget: string }
+                  - { label: 'Price', name: price, widget: string, hint: 'As it should appear, e.g. $12.00 or "from $40".' }
+                  - { label: 'Note', name: note, widget: string, required: false }
           - label: 'Homepage hero'
             name: hero
             widget: object

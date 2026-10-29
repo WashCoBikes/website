@@ -1,18 +1,21 @@
 ---
 // Renders a page's Markdown body and swaps each staff slot marker
 // (<div data-staff-slot="instructor"></div>) for that group's staff cards.
+// The section's <h2> is added above the cards unless the page body already
+// has a heading with that id before the marker (so intro text can sit
+// between the heading and the cards).
 //
 // The body arrives as the default slot (<Content />), so Astro renders it
 // fully first — including its image processing — before we split it. Splitting
 // the raw `page.rendered.html` instead skips that step and leaves images as
 // unresolved placeholders.
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import StaffCard from './StaffCard.astro';
 
 interface StaffSection {
   id: string;
   label: string;
-  staffGroup?: 'mechanic' | 'instructor';
+  staffGroup?: 'mechanic' | 'instructor' | 'board' | 'executive' | 'staff';
 }
 
 interface Props {
@@ -21,10 +24,13 @@ interface Props {
 
 const staffSections = (Astro.props.sections ?? []).filter((s) => s.staffGroup);
 const staff = await getCollection('staff');
+const bios = new Map(
+  await Promise.all(staff.map(async (m) => [m.id, (await render(m)).Content] as const)),
+);
 
 type Chunk =
   | { type: 'html'; html: string }
-  | { type: 'staff'; id: string; label: string; group: string };
+  | { type: 'staff'; id: string; label: string; group: string; heading: boolean };
 
 const chunks: Chunk[] = [];
 let rest = await Astro.slots.render('default');
@@ -32,8 +38,10 @@ for (const s of staffSections) {
   const marker = `<div data-staff-slot="${s.staffGroup}"></div>`;
   const idx = rest.indexOf(marker);
   if (idx === -1) continue;
-  chunks.push({ type: 'html', html: rest.slice(0, idx) });
-  chunks.push({ type: 'staff', id: s.id, label: s.label, group: s.staffGroup! });
+  const before = rest.slice(0, idx);
+  const heading = !before.includes(`id="${s.id}"`);
+  chunks.push({ type: 'html', html: before });
+  chunks.push({ type: 'staff', id: s.id, label: s.label, group: s.staffGroup!, heading });
   rest = rest.slice(idx + marker.length);
 }
 chunks.push({ type: 'html', html: rest });
@@ -44,19 +52,24 @@ chunks.push({ type: 'html', html: rest });
     <Fragment set:html={chunk.html} />
   ) : (
     <section class="staff-section">
-      <h2 id={chunk.id}>{chunk.label}</h2>
+      {chunk.heading && <h2 id={chunk.id}>{chunk.label}</h2>}
       <div class="grid grid--3">
         {staff
           .filter((m) => m.data.group === chunk.group)
           .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
-          .map((m) => (
-            <StaffCard
-              name={m.data.name}
-              role={m.data.role}
-              bio={m.data.bio}
-              photo={m.data.photo}
-            />
-          ))}
+          .map((m) => {
+            const Bio = bios.get(m.id)!;
+            return (
+              <StaffCard
+                name={m.data.name}
+                role={m.data.role}
+                photo={m.data.photo}
+                photoPosition={m.data.photoPosition}
+              >
+                {m.body?.trim() && <Bio />}
+              </StaffCard>
+            );
+          })}
       </div>
     </section>
   ),

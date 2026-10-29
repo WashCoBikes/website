@@ -4,6 +4,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionNav from '../components/SectionNav.astro';
 import ContentWithStaff from '../components/ContentWithStaff.astro';
 import ChildLinks from '../components/ChildLinks.astro';
+import Hero from '../components/Hero.astro';
+import HoursWidget from '../components/HoursWidget.astro';
+import RatesWidget from '../components/RatesWidget.astro';
+import site from '../data/site.json';
 import { generatedChildren } from '../lib/nav';
 
 export async function getStaticPaths() {
@@ -40,19 +44,52 @@ const childLinks = [
 
 const sections = page.data.sections ?? [];
 const navSections = sections.map(({ id, label }) => ({ id, label }));
+
+const { heroImage, showHours, showRates, description } = page.data;
+const tel = `tel:+1${site.phone.replace(/[^0-9]/g, '')}`;
+const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}`,
+)}`;
 ---
 
-<BaseLayout title={page.data.title}>
-  <article class="wrap page">
-    <header class="page-head">
-      <h1 class="page-title">{page.data.title}</h1>
-      {navSections.length > 0 && <SectionNav sections={navSections} />}
-    </header>
+<BaseLayout title={page.data.title} description={description || undefined}>
+  {heroImage && (
+    <Hero
+      title={page.data.title}
+      lede={description}
+      eyebrow={showHours ? `${site.address.street} · ${site.address.city}, ${site.address.state}` : undefined}
+      image={heroImage}
+      imageAlt={`${page.data.title} photo`}
+    >
+      {showHours && (
+        <>
+          <a class="btn btn--primary" href={tel}>Call {site.phone}</a>
+          <a class="btn btn--ghost-light" href={directions} target="_blank" rel="noopener">Get directions</a>
+        </>
+      )}
+    </Hero>
+  )}
 
-    <div class="prose">
-      <ContentWithStaff sections={sections}>
-        <Content />
-      </ContentWithStaff>
+  <article class="wrap page">
+    {(!heroImage || navSections.length > 0) && (
+      <header class="page-head">
+        {!heroImage && <h1 class="page-title">{page.data.title}</h1>}
+        {navSections.length > 0 && <SectionNav sections={navSections} />}
+      </header>
+    )}
+
+    <div class:list={['page-body', { 'page-body--aside': showHours }]}>
+      <div class="prose">
+        <ContentWithStaff sections={sections}>
+          <Content />
+        </ContentWithStaff>
+        {showRates && <RatesWidget />}
+      </div>
+      {showHours && (
+        <aside class="page-aside" aria-label="Shop location and hours">
+          <HoursWidget />
+        </aside>
+      )}
     </div>
 
     <ChildLinks children={childLinks} />
@@ -63,4 +100,19 @@ const navSections = sections.map(({ id, label }) => ({ id, label }));
   .page { padding-top: 2rem; padding-bottom: 3rem; }
   .page-head { margin-bottom: 1rem; }
   .page-title { margin-bottom: 0.25rem; }
+  /* .prose caps width at 46rem for readable line length. Staff card sections
+     run the full page width; everything else keeps the readable measure.
+     Same approach as the homepage body. Pages with the hours sidebar keep
+     the narrow column. */
+  .page-body:not(.page-body--aside) .prose { max-width: none; }
+  .page-body:not(.page-body--aside) .prose > :global(:not(.staff-section)) { max-width: 46rem; }
+  .page-body--aside { display: grid; gap: 2rem; }
+  @media (min-width: 900px) {
+    .page-body--aside {
+      grid-template-columns: minmax(0, 46rem) 20rem;
+      gap: 3rem;
+      align-items: start;
+    }
+    .page-aside { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+  }
 </style>
