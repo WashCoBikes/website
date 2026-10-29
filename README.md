@@ -1,5 +1,7 @@
 # WashCo Bikes — website prototype
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c079afbe-738d-4169-99b5-302e5ef21dea/deploy-status)](https://app.netlify.com/projects/washcobikes/deploys)
+
 A rebuild of [washcobikes.org](https://washcobikes.org/) for the Washington
 County Bicycle Organization, a community bike shop and nonprofit in Hillsboro,
 Oregon.
