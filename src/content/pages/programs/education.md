@@ -96,7 +96,7 @@ Registration closes 7 days before each workshop to allow time for students to co
 
 **Course fee:** The full course value is $250. WashCo Bikes subsidizes this workshop so riders pay **$75**. Grants and scholarships may be available when cost is a barrier.
 
-![An instructor leading a Smart Cycling class through riding drills on a covered court](../../../assets/images/20160522_145512.jpg)  ![An instructor demonstrating bike handling to Smart Cycling students](../../../assets/images/20160522_135424.jpg)
+![An instructor leading a Smart Cycling class through riding drills on a covered court](../../../assets/images/20160522_145512.jpg)  ![An instructor demonstrating a bicycle pump to cycling students](../../../assets/images/20160522_135424.jpg)
 
 [![Click here to register](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/q1epnkj31cz4pxu/)
 
@@ -114,9 +114,9 @@ Pricing for a rodeo is $250.00. Once you have filled out the registration page, 
 
 date and time for your event.
 
-![A volunteer demonstrating how to pump up a bicycle tire during a class](../../../assets/images/admujeres_5.jpg)
+![Instructors demonstrating bicycle tire maintenance to a group](../../../assets/images/admujeres_5.jpg)
 
-![Children and parents with bicycles at a learn-to-ride session outside a school](../../../assets/images/IMAG0527.jpg)
+![Children and adults with bicycles outside a school](../../../assets/images/IMAG0527.jpg)
 
 [![Click here to register](../../../assets/images/images__2_.jpg)](https://washcobikes.wufoo.com/forms/mgkxazx1fo7a0a/)
 
