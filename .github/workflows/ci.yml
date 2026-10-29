@@ -26,6 +26,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Test alt-text checker
+        run: python3 -m unittest discover -s scripts -p "test_*.py"
+
       - name: Build
         id: build
         run: npm run build
@@ -34,7 +37,7 @@ jobs:
 
       - name: Alt text on every content image
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: python3 scripts/apply-alt-text.py --check
+        run: python3 scripts/check-alt-text.py
 
       - name: Unresolved Astro image placeholders
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}

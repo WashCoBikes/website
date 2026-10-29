@@ -50,7 +50,7 @@ run = "python scripts/verify-redirects.py --live"
 
 [tasks.alt]
 description = "Check every content image has alt text"
-run = "python scripts/apply-alt-text.py --check"
+run = "python scripts/check-alt-text.py"
 
 [tasks.placeholders]
 description = "Fail if unresolved Astro image placeholders reached the build"
@@ -84,6 +84,7 @@ exit $STATUS
 description = "Everything CI runs: build, alt text, placeholders, redirects, a11y"
 run = [
   "mise run build",
+  "python -m unittest discover -s scripts -p 'test_*.py'",
   "mise run alt",
   "mise run placeholders",
   "mise run verify",

@@ -117,7 +117,7 @@ Recording it here so nobody mistakes generated work for reviewed work:
 |---|---|
 | Content extraction (`scripts/scrape.py`, `scripts/generate-content.py`), initial routes, layout, and stylesheet | DeepSeek V4 Pro, via [oh-my-pi](https://github.com/can1357/oh-my-pi) |
 | Alt text for all migrated images | Claude Opus 5, via [Claude Code](https://claude.com/claude-code) |
-| `scripts/verify-redirects.py`, `scripts/apply-alt-text.py`, CI workflow | Claude Opus 5, via Claude Code |
+| `scripts/verify-redirects.py`, CI workflow | Claude Opus 5, via Claude Code |
 
 Commits carry `Co-Authored-By` trailers naming the model involved.
 
