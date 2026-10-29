@@ -11,6 +11,8 @@ const pages = defineCollection({
       locale: z.enum(['en', 'es']).default('en'),
       order: z.number().optional(),
       heroImage: image().optional(),
+      showHours: z.boolean().default(false),
+      showRates: z.boolean().default(false),
       sourceUrl: z.string().optional(),
       draft: z.boolean().default(false),
       sections: z
@@ -18,7 +20,7 @@ const pages = defineCollection({
           z.object({
             id: z.string(),
             label: z.string(),
-            staffGroup: z.enum(['mechanic', 'instructor']).optional(),
+            staffGroup: z.enum(['mechanic', 'instructor', 'board', 'executive', 'staff']).optional(),
           }),
         )
         .optional(),
@@ -31,9 +33,10 @@ const staff = defineCollection({
     z.object({
       name: z.string(),
       role: z.string(),
-      group: z.enum(['mechanic', 'instructor']),
+      group: z.enum(['mechanic', 'instructor', 'board', 'executive', 'staff']),
       photo: image().optional(),
-      bio: z.string().optional(),
+      // CSS object-position for the square crop, e.g. "left center".
+      photoPosition: z.string().optional(),
       order: z.number().optional(),
     }),
 });

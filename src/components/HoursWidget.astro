@@ -12,11 +12,16 @@ const { address = site.address, hours = site.hours } = Astro.props;
   <p class="hw-phone">
     <a href={`tel:+1${site.phone.replace(/[^0-9]/g, '')}`}>{site.phone}</a>
   </p>
+  {site.shopEmail && (
+    <p class="hw-email">
+      <a href={`mailto:${site.shopEmail}`}>{site.shopEmail}</a>
+    </p>
+  )}
   <dl class="hw-hours">
     {hours.days.map((d) => (
       <div class="hw-row">
         <dt>{d.day}</dt>
-        <dd>{d.open} – {d.close}</dd>
+        <dd>{d.close ? `${d.open} – ${d.close}` : d.open}</dd>
       </div>
     ))}
   </dl>
@@ -37,7 +42,9 @@ const { address = site.address, hours = site.hours } = Astro.props;
     margin-bottom: 0.75rem;
   }
   .hw-address { margin: 0 0 0.5rem; line-height: 1.5; }
-  .hw-phone { margin: 0 0 1rem; }
+  .hw-phone { margin: 0 0 0.25rem; }
+  .hw-email { margin: 0 0 1rem; overflow-wrap: anywhere; }
+  .hw-row dd::first-letter { text-transform: uppercase; }
   .hw-phone a { font-weight: 700; }
   .hw-hours {
     display: grid;

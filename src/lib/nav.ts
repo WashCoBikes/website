@@ -6,7 +6,6 @@ export interface NavItem {
 // Child routes that render generated content instead of a `pages` entry, so
 // they can't be discovered by slug prefix the way the rest are.
 export const generatedChildren: Record<string, NavItem[]> = {
-  shop: [{ label: 'Meet Our Mechanics', href: '/shop/mechanics' }],
   'get-involved': [{ label: 'Open Positions', href: '/get-involved/open-positions' }],
 };
 

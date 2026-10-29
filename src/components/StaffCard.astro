@@ -1,25 +1,33 @@
 ---
 import { Image } from 'astro:assets';
+// The bio is the staff file's Markdown body, passed in as the default slot.
 interface Props {
   name: string;
   role: string;
-  bio?: string;
   photo?: ImageMetadata;
+  photoPosition?: string;
 }
-const { name, role, bio, photo } = Astro.props;
+const { name, role, photo, photoPosition } = Astro.props;
 ---
 
 <article class="staff-card">
   <div class="staff-photo">
     {photo ? (
-      <Image src={photo} alt={`${name} — ${role}`} width={400} height={400} class="staff-img" />
+      <Image
+        src={photo}
+        alt={`${name} — ${role}`}
+        width={400}
+        height={400}
+        class="staff-img"
+        style={photoPosition ? `object-position: ${photoPosition}` : undefined}
+      />
     ) : (
       <div class="staff-initial" aria-hidden="true">{name.charAt(0)}</div>
     )}
   </div>
   <h3>{name}</h3>
   <p class="staff-role">{role}</p>
-  {bio && <p class="staff-bio">{bio}</p>}
+  {Astro.slots.has('default') && <div class="staff-bio"><slot /></div>}
 </article>
 
 <style>
@@ -39,7 +47,7 @@ const { name, role, bio, photo } = Astro.props;
     background: var(--navy-100);
     margin-bottom: 0.85rem;
   }
-  .staff-img { width: 100%; height: 100%; object-fit: cover; }
+  .staff-img { width: 100%; height: 100%; object-fit: cover; margin: 0; }
   .staff-initial {
     width: 100%;
     height: 100%;
@@ -61,5 +69,8 @@ const { name, role, bio, photo } = Astro.props;
     letter-spacing: 0.04em;
     font-family: var(--font-display);
   }
-  .staff-bio { margin: 0; font-size: 0.92rem; color: var(--text-soft); white-space: pre-line; }
+  .staff-bio { font-size: 0.92rem; color: var(--text-soft); }
+  .staff-bio :global(p),
+  .staff-bio :global(ul) { margin: 0 0 0.6rem; }
+  .staff-bio :global(:last-child) { margin-bottom: 0; }
 </style>

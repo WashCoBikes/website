@@ -13,9 +13,10 @@
 
 # --- Shop
 /retail_amp_repair_shop                              /shop                                     301
-/retail_amp_repair_shop/service_and_repair_rates     /shop/rates                               301
-/retail_amp_repair_shop/meet_our_mechanics           /shop/mechanics                           301
-/retail_amp_repair_shop/tienda_y_taller_de_reparaciones  /shop/es                              301
+/retail_amp_repair_shop/service_and_repair_rates     /shop#rates                               301
+/retail_amp_repair_shop/meet_our_mechanics           /shop                                     301
+/retail_amp_repair_shop/tienda_y_taller_de_reparaciones  /shop                                 301
+/shop/rates                                          /shop#rates                               301
 
 # --- Programs
 /programs/saddle_up_bike_camp                        /programs/saddle-up-bike-camp             301

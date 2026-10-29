@@ -251,3 +251,9 @@ th { background: var(--navy-50); color: var(--navy-800); }
   object-fit: cover;
   margin: 0 0 0.75rem;
 }
+
+/* Image buttons (migrated "Apply now", "Donate", etc.): keep them button-sized
+   and drop the external-link arrow, which only makes sense after text. */
+.prose a:has(> img) { display: inline-block; }
+.prose a[href]:has(> img)::after { content: none; }
+.prose a > img { width: 240px; margin: 0.5rem 0; }
