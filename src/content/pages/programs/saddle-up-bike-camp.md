@@ -7,11 +7,11 @@ sourceUrl: "https://washcobikes.org/programs/saddle_up_bike_camp"
 sections:
   - id: faq
     label: "Camps FAQ"
-  - id: gallery
-    label: "Photo Gallery"
   - id: instructors
     label: "Meet Our Instructors"
     staffGroup: instructor
+  - id: gallery
+    label: "Photo Gallery"
 draft: false
 ---
 
@@ -225,6 +225,7 @@ Qualifications for a scholarship include, but are not limited to:
 
 **A:** This is a decision for you as a parent needs to make. Please understand the kids are doing a lot of riding each day. The first three days are spent working on skills and incorporating them into riding. Missing camp during these days makes it hard to keep up on the final two days they are riding. much of the day.
 
+<div data-staff-slot="instructor"></div>
 <h2 id="gallery">Photo Gallery</h2>
 
 ## Here are a few pictures from the past Camps
