@@ -29,8 +29,6 @@
     "http://localhost:4321/resources",
     "http://localhost:4321/resources/partners",
     "http://localhost:4321/shop",
-    "http://localhost:4321/shop/es",
-    "http://localhost:4321/shop/mechanics",
-    "http://localhost:4321/shop/rates"
+    "http://localhost:4321/home-concept"
   ]
 }
