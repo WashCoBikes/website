@@ -5,8 +5,6 @@ description: "WashCo Bikes helps people across Washington County ride with confi
 locale: en
 order: 99
 sections:
-  - id: featured
-    label: "Featured now"
   - id: serve
     label: "Three ways we serve"
   - id: mission
