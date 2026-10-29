@@ -1,0 +1,52 @@
+<section aria-labelledby="contact-form-heading">
+  <h2 id="contact-form-heading">Send us a message</h2>
+  <p>Name, email, and comments are required.</p>
+  <form
+    name="contact"
+    method="POST"
+    action="/contact/thanks/"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="honeypot" hidden>
+      <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+    </p>
+    <div class="field">
+      <label for="contact-name">Name</label>
+      <input id="contact-name" name="name" autocomplete="name" maxlength="200" required />
+    </div>
+    <div class="field">
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+    </div>
+    <div class="field">
+      <label for="contact-phone">Phone (optional)</label>
+      <input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="50" />
+    </div>
+    <div class="field">
+      <label for="contact-comments">Comments</label>
+      <textarea id="contact-comments" name="comments" rows="7" maxlength="10000" required></textarea>
+    </div>
+    <button class="btn btn--primary" type="submit">Send message</button>
+  </form>
+</section>
+
+<style>
+  form { display: grid; gap: 1.25rem; }
+  .honeypot { display: none; }
+  .field { display: grid; gap: 0.35rem; }
+  label { font-weight: 700; }
+  input, textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem;
+    border: 1px solid var(--muted);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+  }
+  textarea { resize: vertical; }
+  button { justify-self: start; }
+</style>
