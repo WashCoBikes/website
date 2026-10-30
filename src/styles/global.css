@@ -13,7 +13,10 @@
   --navy-50: #f2f5fa;
   --gold-500: #ffbc19;
   --gold-400: #ffc940;
-  --gold-700: #b97e00;
+  /* Text-safe gold. #b97e00 was 3.47:1 and failed WCAG AA; this is 5.76:1 on
+     white and 5.29:1 on the cream surface, so it passes on both. Use gold-500
+     for fills and borders, gold-700 whenever gold is text. */
+  --gold-700: #8a5d00;
 
   /* Neutrals */
   --paper: #f7f5f0;

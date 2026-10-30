@@ -47,17 +47,17 @@ You can bring a bike to our retail shop during posted business hours ([check her
 
 ## Rita Jaeger August 17, 1948 - May 6, 2025
 
-![](../../../assets/images/rita_jaeger.jpg)
+![Rita Jaeger](../../../assets/images/rita_jaeger.jpg)
 
 Rita loved riding her bicycle as a child in Germany before coming to America, and always loved that Oregonians ride bikes!
 
-## In Memoriam
+<h2 id="in-memoriam-about">In Memoriam</h2>
 
 We honor our supporters, board members, and volunteers who have passed.  You can make a donation in their name or on behalf of your loved one [HERE](https://washcobikes.wufoo.com/forms/wtpjkw70br4sms/).
 
 ## Scott Kuzma 1958-2022
 
-![](../../../assets/images/Scott_Kuzma.jpeg)
+![Scott Kuzma](../../../assets/images/Scott_Kuzma.jpeg)
 
 When I met my husband Scott Kuzma (1958-2022) and we started dating back in the '90s he was avid about road biking, doing “centuries” on the weekends.  For our first Christmas together he bought me a racing green Bianchi and the next summer we would set the VCR (!) so we could come home and watch the 20 minutes of Tour de France coverage that was offered back then.  We had a great time in 2000 following the Tour in France, a bucket list trip.  In other words, he made me a fan of the bike!
 
@@ -80,18 +80,18 @@ The family wishes to thank everyone who chooses to donate to this worthy organiz
 
 ## Carl Nelson
 
-![](../../../assets/images/Thumbs-D05_0335_(2).jpg)
+![Carl Nelson](../../../assets/images/Thumbs-D05_0335_(2).jpg)
 
 Carl Nelson (1952-2019) - One of the original founders and a longtime member of the Board of Directors of WashCo Bikes, Carl tirelessly promoted our mission of improving cycling locally and serving our local community, especially children. Carl has made WashCo Bikes a family legacy: he is survived by his daughter Shannon, currently serving on the Board of Directors, his granddaughter Allie, founding member of our youth advisory committee, and his wife, longtime and devoted volunteer Nancy.
 
 ## Dr. Jennifer Kurmaskie-Konopka
 
-![](../../../assets/images/JEN_KURMASKIE.jpg)
+![Dr. Jennifer Kurmaskie-Konopka](../../../assets/images/JEN_KURMASKIE.jpg)
 
 Dr. Jennifer Kurmaskie-Konopka (1963-2019) The beloved sister of our Executive Director Joe Kurmaskie, Jennifer was an avid outdoorsperson and pediatrician whose memory will be honored by a donation that introduces children to the freedom of cycling.
 
 ## Mark Norberg
 
-![](../../../assets/images/RETREAT_031_(2).JPG)
+![Mark Norberg](../../../assets/images/RETREAT_031_(2).JPG)
 
 Mark Norberg (1953-2017) was one of the founding members of Washington County Bicycle Transportation Coalition and volunteered many hours in the shop as well as serving on the board for many years. For Mark, bicycling was a low environmental impact form of transportation. He always liked to say he "drove" his bicycle and "rode" in a car. In the summer of 1985, Mark's most notable bicycle trip was to drive solo cross-country starting in Portland, OR and ending in Boston, MA. His judgment influenced the growth and mission of WashCo Bikes in countless ways.
