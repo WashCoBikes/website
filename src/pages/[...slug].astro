@@ -7,6 +7,7 @@ import ChildLinks from '../components/ChildLinks.astro';
 import Hero from '../components/Hero.astro';
 import HoursWidget from '../components/HoursWidget.astro';
 import RatesWidget from '../components/RatesWidget.astro';
+import ContactForm from '../components/ContactForm.astro';
 import site from '../data/site.json';
 import { generatedChildren } from '../lib/nav';
 
@@ -84,6 +85,7 @@ const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIC
           <Content />
         </ContentWithStaff>
         {showRates && <RatesWidget />}
+        {slug === 'contact' && <ContactForm />}
       </div>
       {showHours && (
         <aside class="page-aside" aria-label="Shop location and hours">

@@ -95,6 +95,28 @@ Repository." It needs no login and commits nothing.
 Which backend this ends up on is deliberately still open — it depends on whether
 the people who will actually edit the site are willing to use a GitHub account.
 
+## Contact form
+
+The `/contact` page uses [Netlify Forms](https://docs.netlify.com/manage/forms/setup/)
+with a hidden honeypot field. It submits without JavaScript and redirects to
+`/contact/thanks/` after submission. The `email` field lets staff reply directly
+to the visitor from notification emails. No email addon or API keys are needed.
+
+Netlify setup:
+
+1. Enable **Forms > Enable form detection** before deploying this branch
+   (already enabled for this project).
+2. After deployment, confirm that the `contact` form appears under **Forms**.
+3. Under **Forms > Submission notifications**, add an email notification for
+   `contact` to `info@washcobikes.org`, or the inbox designated by the team.
+4. Submit a test on the deployed site using an email address you control. Confirm
+   the thank-you page, the submission in Netlify, and delivery to the inbox.
+   Check the Spam list if the test does not appear under Verified submissions.
+
+Astro's local dev and preview servers do not process Netlify form submissions.
+The HTML can be checked locally, but submission and email delivery need a Netlify
+deployment. Notifications are configured in Netlify, not in this repository.
+
 ## Conventions worth knowing
 
 - **Plain CSS, no Tailwind and no component library.** This site will be
