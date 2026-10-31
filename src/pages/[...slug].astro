@@ -39,12 +39,15 @@ const childLinks = [
         : null;
       return rest !== null && !rest.includes('/');
     })
+    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
     .map((p) => ({ label: p.data.title, href: `/${p.data.slug}` })),
   ...(generatedChildren[slug] ?? []),
-].sort((a, b) => a.label.localeCompare(b.label));
+];
 
 const sections = page.data.sections ?? [];
-const navSections = sections.map(({ id, label }) => ({ id, label }));
+// A single section doesn't need a jump menu.
+const navSections =
+  sections.length > 1 ? sections.map(({ id, label }) => ({ id, label })) : [];
 
 const { heroImage, showHours, showRates, description } = page.data;
 const tel = `tel:+1${site.phone.replace(/[^0-9]/g, '')}`;
