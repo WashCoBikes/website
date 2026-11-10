@@ -17,4 +17,4 @@ More specifics in days to come, but with your help we'll:
 * Create a Freewheeling Festival Of The Bike around our adopt a bike program, including a Bike Craft weekend and holiday ride.
 * Bring a Sunday Parkways series to all of Washington County.
 * Expand and grow our community bicycle shop in Hillsboro and new shops/presence countywide.
-* Create a Mechanics- scholarship and internship program.Expand our advocacy and safety classes, clinics, safe routes and education.
+* Create a Mechanics- scholarship and internship program. Expand our advocacy and safety classes, clinics, safe routes and education.
