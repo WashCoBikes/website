@@ -11,6 +11,9 @@ const pages = defineCollection({
       locale: z.enum(['en', 'es']).default('en'),
       order: z.number().optional(),
       heroImage: image().optional(),
+      heroImageAlt: z.string().optional(),
+      // Buttons in the hero. The first is the gold primary button.
+      heroActions: z.array(z.object({ label: z.string(), href: z.string() })).optional(),
       showHours: z.boolean().default(false),
       showRates: z.boolean().default(false),
       sourceUrl: z.string().optional(),

@@ -39,17 +39,16 @@ const childLinks = [
         : null;
       return rest !== null && !rest.includes('/');
     })
-    .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999))
     .map((p) => ({ label: p.data.title, href: `/${p.data.slug}` })),
   ...(generatedChildren[slug] ?? []),
-];
+].sort((a, b) => a.label.localeCompare(b.label));
 
 const sections = page.data.sections ?? [];
 // A single section doesn't need a jump menu.
 const navSections =
   sections.length > 1 ? sections.map(({ id, label }) => ({ id, label })) : [];
 
-const { heroImage, showHours, showRates, description } = page.data;
+const { heroImage, heroImageAlt, heroActions, showHours, showRates, description } = page.data;
 const tel = `tel:+1${site.phone.replace(/[^0-9]/g, '')}`;
 const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}`,
@@ -63,9 +62,12 @@ const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIC
       lede={description}
       eyebrow={showHours ? `${site.address.street} · ${site.address.city}, ${site.address.state}` : undefined}
       image={heroImage}
-      imageAlt={`${page.data.title} photo`}
+      imageAlt={heroImageAlt ?? `${page.data.title} photo`}
     >
-      {showHours && (
+      {heroActions?.map((a, i) => (
+        <a class:list={['btn', i === 0 ? 'btn--primary' : 'btn--ghost-light']} href={a.href}>{a.label}</a>
+      ))}
+      {!heroActions && showHours && (
         <>
           <a class="btn btn--primary" href={tel}>Call {site.phone}</a>
           <a class="btn btn--ghost-light" href={directions} target="_blank" rel="noopener">Get directions</a>
