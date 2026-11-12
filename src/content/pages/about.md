@@ -22,7 +22,7 @@ sections:
 
 <h2 id="mission">Our Mission</h2>
 
-***We make bicyclists and bicycling better in Washington County – through education,encouragement, and advocacy.***
+***We make bicyclists and bicycling better in Washington County – through education, encouragement, and advocacy.***
 
 We accomplish this mission through inclusive programs that:
 

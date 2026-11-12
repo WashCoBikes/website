@@ -39,9 +39,12 @@ const childLinks = [
         : null;
       return rest !== null && !rest.includes('/');
     })
-    .map((p) => ({ label: p.data.title, href: `/${p.data.slug}` })),
+    .map((p) => ({ label: p.data.title, href: `/${p.data.slug}`, order: p.data.order })),
   ...(generatedChildren[slug] ?? []),
-].sort((a, b) => a.label.localeCompare(b.label));
+].sort(
+  (a, b) =>
+    (a.order ?? Infinity) - (b.order ?? Infinity) || a.label.localeCompare(b.label),
+);
 
 const sections = page.data.sections ?? [];
 // A single section doesn't need a jump menu.

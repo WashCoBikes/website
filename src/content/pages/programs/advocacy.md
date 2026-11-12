@@ -10,14 +10,15 @@ heroImageAlt: "A community bicycle ride on a calm neighborhood street"
 heroActions:
   - label: "Share a bicycling concern"
     href: "/contact"
-  - label: "How we advocate"
-    href: "#how"
-  - label: "Safe Routes to School"
-    href: "#safe-routes"
-  - label: "Planning partners"
-    href: "#planning"
-  - label: "What we advocate for"
-    href: "#priorities"
+sections:
+  - id: how
+    label: "How we advocate"
+  - id: safe-routes
+    label: "Safe Routes to School"
+  - id: planning
+    label: "Planning partners"
+  - id: priorities
+    label: "What we advocate for"
 ---
 
 WashCo Bikes has been a voice for Washington County's bicycling community since 1998. We bring the perspective of everyday bicyclists—youth, families, commuters, recreational riders, older adults, and people just getting started—into conversations about schools, streets, transportation plans, and public investment.

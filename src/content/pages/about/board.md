@@ -13,7 +13,7 @@ sections:
     label: "Join the Board"
 ---
 
-Members of our all-volunteer board come from diverse backgrounds and interests with a similar passion for bicycle use, safety, education and recreation. Some of have been with us since we started as the “Squeaky Wheels” formed in 1996 to advocate for better connectivity, infrastructure and support of bicycling as viable transportation within the county.
+Members of our all-volunteer board come from diverse backgrounds and interests, with a shared passion for bicycle use, safety, education, and recreation. Some have been with us since 1996, when our predecessor, the Squeaky Wheels, formed to advocate for better connectivity, infrastructure, and support for bicycling as viable transportation in the county.
 
 With 13 cities, Metro, ODOT and Washington County LUT (Department of Land Use and Transportation) to take into account, this has been no small task. Here then, are the list of those currently serving to provide Education, Advocacy and Community to county residents.
 

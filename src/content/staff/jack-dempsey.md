@@ -2,7 +2,7 @@
 name: "Jack Dempsey"
 role: "Board of Directors"
 group: board
-order: 3
+order: 7
 photo: ../../assets/images/Jack_Dempsey.jpg
 ---
 
