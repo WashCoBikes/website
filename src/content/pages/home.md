@@ -21,7 +21,7 @@ From the first pedal to everyday transportation, WashCo Bikes helps people build
 <div class="grid grid--3">
 <div class="card">
 
-![Young riders and an adult with bicycles](../../assets/images/concept-education-youth-riders.jpg)
+![An instructor showing a group how to work on a bike tire during a hands-on lesson](../../assets/images/admujeres_3.jpg)
 
 #### Education: Skills first. Confidence follows.
 

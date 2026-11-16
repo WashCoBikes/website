@@ -255,6 +255,15 @@ th { background: var(--navy-50); color: var(--navy-800); }
   margin: 0 0 0.75rem;
 }
 
+/* Photo galleries (<div class="grid grid--3 gallery">): same 4:3 frame */
+.prose .gallery p { margin: 0; }
+.prose .gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: 0;
+}
+
 /* Image buttons (migrated "Apply now", "Donate", etc.): keep them button-sized
    and drop the external-link arrow, which only makes sense after text. */
 .prose a:has(> img) { display: inline-block; }

@@ -1,64 +1,99 @@
 ---
 title: "Adopt-a-Bike"
 slug: "programs/adopt-a-bike"
+description: "Our largest annual fundraiser puts bicycles, helmets, and safety gear in the hands of Washington County kids and adults who need them."
 locale: en
 order: 33
 sourceUrl: "https://washcobikes.org/programs/adopt-a-bike"
+heroImage: ../../../assets/images/concept-access-school-bike-event.jpg
+heroImageAlt: "Children's bicycles lined up along a schoolyard fence, ready for students"
+heroActions:
+  - label: "Donate now"
+    href: "https://washcobikes.wufoo.com/forms/x184wxtx1rpujow/"
+sections:
+  - id: about-the-program
+    label: "About the program"
+  - id: ways-to-help
+    label: "Ways to help"
+  - id: stories
+    label: "Stories"
 draft: false
 ---
 
-## Adopt-a-Bike Stories
+<h2 id="about-the-program">Supporting our community</h2>
 
-### ***Sarah's Story***
+WashCo Bikes is committed to serving the diverse communities throughout Washington County. We provide access to bicycles, helmets, and essential safety equipment, so people not only get the tools they need but also benefit from education and encouragement around cycling.
 
-"As a single mother, I struggled with transportation. Thanks to Adopt a Bike, I now have a bike to take my kids to school, go to work, and run errands. It's given me so much freedom and peace of mind!"
+We partner with schools, social service agencies, community and faith organizations, and local police and fire departments. These partnerships help us connect with community members who need a bike for transportation, personal health, or general well-being.
 
-### ***John's Story***
+Adopt-a-Bike is our largest fundraising effort each year. Community donations make it possible for us to continue our mission, and your contribution can make a real difference:
 
-"I served in the military and struggled to get around after I returned. Receiving a bike has helped me reconnect with my community, get to appointments, and even start a new job. I can't thank you enough!"
+* **$150** provides a child with a bicycle.
+* **$200** sponsors an adult bike package.
+* **Any amount** is appreciated and helps us reach more people in need.
 
-## Adopt-a-Bike 2025
+<h2 id="ways-to-help">Ways to help</h2>
 
-## Supporting Our Community with WashCo Bikes
+<div class="grid grid--2">
+<div class="card">
 
-WashCo Bikes is committed to serving the diverse communities throughout Washington County. We provide access to bicycles, helmets, and essential safety equipment, ensuring that individuals not only receive the tools they need but also benefit from education and encouragement around cycling. Our organization partners with schools, social service agencies, community and faith organizations, as well as local police and fire departments. These partnerships help us connect with community members who need a bike for transportation, personal health, or general well-being.
+#### Donate
 
-## Adopt a Bike Program: Our Annual Fundraiser
+Adopt a bike for a child or adult, or give any amount toward the program.
 
-Each year, we launch our “Adopt a Bike Program,” which stands as our largest fundraising effort. Community support through donations makes it possible for us to continue our mission. Your contribution can make a significant difference:
+<p><a class="btn btn--primary" href="https://washcobikes.wufoo.com/forms/x184wxtx1rpujow/">Donate now</a></p>
 
-* $150 provides a child with a bicycle.
-* $200 sponsors an adult bike package.
-* Any amount is appreciated and helps us reach more people in need.
+</div>
+<div class="card">
 
-[![Donate now](../../../assets/images/Donate_button.png)](https://washcobikes.wufoo.com/forms/x184wxtx1rpujow/)
+#### Enlist your employer
 
-## Enlist your employer
+Ask whether your employer uses a matching gift platform such as Benevity. If so, give through it and your employer can double your donation. Employers can also sponsor a set number of bikes, helmets, or locks, or a bike rodeo for employees' children.
 
-Ask your employer to if they use a matching donor platform such as Benevity. If they do, please use that to make your donation and with the help of your employer, your donation has doubled.
+<p><a class="btn btn--outline" href="https://washcobikes.wufoo.com/forms/z9uo0iu0fv4zfb/">Corporate donations</a></p>
 
-Your employer may also choose to sponsor a specific number of bikes, helmets, or locks to support those  
-who need them. Some employers will even sponsor a bike rodeo for the children of employees.
+</div>
+<div class="card">
 
-[![Corporate donations](../../../assets/images/Corporate_Donate_Button.png)](https://washcobikes.wufoo.com/forms/z9uo0iu0fv4zfb/)
+#### Volunteer
 
-## Volunteer
+Help refurbish bikes! Volunteer hours are crucial to this program, and your time and skills directly prepare bikes for distribution.
 
-Help refurbish bikes! Volunteer hours are crucial to the success of this program. Your time and skills can directly help prepare bikes for distribution.
+<p><a class="btn btn--outline" href="https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/">Sign up to volunteer</a></p>
 
-[![Volunteer](../../../assets/images/Volunteer_Button.png)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
+</div>
+<div class="card">
 
-## Spread the Word
+#### Spread the word
 
-Share the program with your friends, family, and social media networks. The more people who know, the more bikes we can donate and refurbish!
+Share the program with friends, family, and your social networks. The more people who know, the more bikes we can refurbish and give away.
 
-***Thank you for your support!***
+</div>
+</div>
 
-## Special Thanks to Our Sponsors
+<h2 id="stories">Adopt-a-Bike stories</h2>
 
-|  |  |
-| --- | --- |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
+![A young child on a small bicycle with training wheels, receiving it from Santa Claus](../../../assets/images/bike_santa_big.webp)
+
+<div class="grid grid--2">
+<div class="card">
+
+#### Sarah's story
+
+> “As a single mother, I struggled with transportation. Thanks to Adopt-a-Bike, I now have a bike to take my kids to school, go to work, and run errands. It's given me so much freedom and peace of mind!”
+
+</div>
+<div class="card">
+
+#### John's story
+
+> “I served in the military and struggled to get around after I returned. Receiving a bike has helped me reconnect with my community, get to appointments, and even start a new job. I can't thank you enough!”
+
+</div>
+</div>
+
+**Thank you for your support!**
+
+<!-- TODO: "Special Thanks to Our Sponsors" was an empty table on the live
+     site (the sponsor logos didn't migrate). Add a sponsor grid here once we
+     have the current list and logos. -->
