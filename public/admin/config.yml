@@ -1,16 +1,16 @@
 # yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 
-# WashCo Bikes — Sveltia CMS configuration (Decap-compatible).
-# Local mode: open /admin/index.html in a Chromium browser and choose
-# "Work with Local Repository". The backend block is required for local mode
-# but no OAuth app is needed — see docs/implementation-plan.md §9.
+# Local editing: open /admin/index.html in Chromium and choose
+# "Work with Local Repository". Remote GitHub editing needs authentication.
 
 backend:
   name: github
   repo: WashCoBikes/website
 
-media_folder: src/assets/images
-public_folder: /src/assets/images
+media_folder: /public/images
+public_folder: /images
+output:
+  omit_empty_optional_fields: true
 
 collections:
   - name: pages
@@ -19,6 +19,8 @@ collections:
     description: The site's content pages. Edit the body to change the text.
     folder: src/content/pages
     path: '{{slug}}'
+    media_folder: /public/images
+    public_folder: /images
     create: true
     slug: '{{slug}}'
     fields:

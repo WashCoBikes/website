@@ -10,7 +10,7 @@ const pages = defineCollection({
       description: z.string().optional().default(''),
       locale: z.enum(['en', 'es']).default('en'),
       order: z.number().optional(),
-      heroImage: image().optional(),
+      heroImage: z.union([image(), z.string().startsWith('/images/')]).optional(),
       heroImageAlt: z.string().optional(),
       // Buttons in the hero. The first is the gold primary button.
       heroActions: z.array(z.object({ label: z.string(), href: z.string() })).optional(),
@@ -37,7 +37,7 @@ const staff = defineCollection({
       name: z.string(),
       role: z.string(),
       group: z.enum(['mechanic', 'instructor', 'board', 'executive', 'staff']),
-      photo: image().optional(),
+      photo: z.union([image(), z.string().startsWith('/images/')]).optional(),
       // CSS object-position for the square crop, e.g. "left center".
       photoPosition: z.string().optional(),
       order: z.number().optional(),

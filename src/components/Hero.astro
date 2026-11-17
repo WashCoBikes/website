@@ -7,7 +7,7 @@ interface Props {
   title: string;
   lede?: string;
   eyebrow?: string;
-  image?: ImageMetadata;
+  image?: ImageMetadata | string;
   imageAlt?: string;
 }
 const { title, lede, eyebrow, image, imageAlt = '' } = Astro.props;
@@ -22,7 +22,9 @@ const { title, lede, eyebrow, image, imageAlt = '' } = Astro.props;
       {Astro.slots.has('default') && <div class="hero-cta"><slot /></div>}
     </div>
     <div class="hero-media">
-      {image && <Image src={image} alt={imageAlt} class="hero-img" loading="eager" />}
+      {image && (typeof image === 'string'
+        ? <img src={image} alt={imageAlt} class="hero-img" loading="eager" />
+        : <Image src={image} alt={imageAlt} class="hero-img" loading="eager" />)}
     </div>
   </div>
 </section>

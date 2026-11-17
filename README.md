@@ -41,6 +41,7 @@ Run `mise tasks` to list these, or `mise run <task>`.
 |---|---|
 | `install` | Install Node dependencies |
 | `dev` | Start the dev server on http://localhost:4321 |
+| `cms` | Open the Sveltia editor and show local editing instructions |
 | `build` | Build the static site into `dist/` |
 | `preview` | Build, then serve `dist/` locally for review |
 | `sync` | Regenerate content collection types after a schema change |
@@ -88,12 +89,28 @@ Markdown in `src/content/` is the source of truth. `src/data/site.json` holds
 global values — hours are structured per-day data rather than a prose string,
 because the homepage widget renders them.
 
-The CMS lives at `/admin`. It currently runs in **local mode** only: open
-`/admin/index.html` in a Chromium-based browser and choose "Work with Local
-Repository." It needs no login and commits nothing.
+The CMS is a static page at `/admin/` on the built site. For local editing, run
+`mise run cms`. It starts Astro in the foreground, opens the admin page, and
+prints the steps in the terminal. Use Chrome or Edge for local file access; if
+your default browser is different, open
+`http://localhost:4321/admin/index.html` in Chrome or Edge. Choose **Work with
+Local Repository** and select this repository's root folder. Changes are written
+to local files; review and commit them with Git. Stop the server with Ctrl-C or
+by closing the terminal tab.
 
-Which backend this ends up on is deliberately still open — it depends on whether
-the people who will actually edit the site are willing to use a GitHub account.
+The editor manages pages, staff, events, open positions, and site settings.
+New images uploaded through the editor go to `public/images/` and are referenced
+as `/images/...`. Existing images in `src/assets/images/` remain Astro-optimized;
+the site supports both kinds of image paths. Empty optional fields are omitted
+from front matter so they pass the Astro collection schemas.
+
+The configured GitHub backend points to `WashCoBikes/website`. To edit on the
+deployed site, editors need repository write access and GitHub authentication.
+For a small technical team, Sveltia supports a personal access token. For a
+regular sign-in flow on Netlify, register a GitHub OAuth app and add its client
+ID and secret under the Netlify project's **Security > OAuth** settings. This
+account-level step is not configured in this repository. See the
+[Sveltia GitHub backend guide](https://sveltiacms.app/en/docs/backends/github).
 
 ## Contact form
 

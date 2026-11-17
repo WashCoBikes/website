@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 interface Props {
   name: string;
   role: string;
-  photo?: ImageMetadata;
+  photo?: ImageMetadata | string;
   photoPosition?: string;
 }
 const { name, role, photo, photoPosition } = Astro.props;
@@ -13,14 +13,11 @@ const { name, role, photo, photoPosition } = Astro.props;
 <article class="staff-card">
   <div class="staff-photo">
     {photo ? (
-      <Image
-        src={photo}
-        alt={`${name} — ${role}`}
-        width={400}
-        height={400}
-        class="staff-img"
-        style={photoPosition ? `object-position: ${photoPosition}` : undefined}
-      />
+      typeof photo === 'string' ? (
+        <img src={photo} alt={`${name} — ${role}`} width="400" height="400" class="staff-img" style={photoPosition ? `object-position: ${photoPosition}` : undefined} loading="lazy" />
+      ) : (
+        <Image src={photo} alt={`${name} — ${role}`} width={400} height={400} class="staff-img" style={photoPosition ? `object-position: ${photoPosition}` : undefined} />
+      )
     ) : (
       <div class="staff-initial" aria-hidden="true">{name.charAt(0)}</div>
     )}

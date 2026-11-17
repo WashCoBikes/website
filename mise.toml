@@ -17,6 +17,13 @@ run = "npm install"
 description = "Start the dev server on http://localhost:4321"
 run = "npm run dev"
 
+[tasks.cms]
+description = "Open Sveltia CMS for local editing (use Chrome or Edge)"
+run = [
+  "printf '%s\n' 'CMS: http://localhost:4321/admin/index.html' 'In Chrome or Edge, choose Work with Local Repository and select this website folder.' 'Keep this terminal open while editing; Ctrl-C stops the server.'",
+  "npm run dev -- --open /admin/index.html",
+]
+
 [tasks.build]
 description = "Build the static site into dist/"
 run = "npm run build"
