@@ -4,15 +4,11 @@
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
     <title>Sveltia CMS</title>
-    <style>
-      /* Skip Sveltia's full-screen snapshots when switching CMS views. */
-      ::view-transition-group(*),
-      ::view-transition-image-pair(*),
-      ::view-transition-old(*),
-      ::view-transition-new(*) {
-        animation: none !important;
-      }
-    </style>
+    <script>
+      // Sveltia falls back to a direct view swap when this API is unavailable.
+      // Its snapshots can flash across the editor during local navigation.
+      Object.defineProperty(document, 'startViewTransition', { value: undefined });
+    </script>
   </head>
   <body>
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
