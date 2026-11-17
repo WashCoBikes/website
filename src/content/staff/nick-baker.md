@@ -1,8 +1,8 @@
 ---
 name: "Nick Baker"
-role: "Board of Directors Chair"
+role: "Board of Directors"
 group: board
-order: 0
+order: 1
 photo: ../../assets/images/Headshot1-NB-1x1_200.jpg
 ---
 

@@ -21,7 +21,7 @@ From the first pedal to everyday transportation, WashCo Bikes helps people build
 <div class="grid grid--3">
 <div class="card">
 
-![Young riders and an adult with bicycles](../../assets/images/concept-education-youth-riders.jpg)
+![An instructor showing a group how to work on a bike tire during a hands-on lesson](../../assets/images/admujeres_3.jpg)
 
 #### Education: Skills first. Confidence follows.
 
@@ -38,8 +38,7 @@ Learn to ride, return after time away, improve bike handling, practice safe cycl
 
 We support practical bicycle infrastructure, informed transportation decisions, and communities where people of all ages and abilities can ride comfortably.
 
-<!-- TODO: no advocacy page exists in the repo yet. The concept linked to advocacy.html. -->
-[Learn about advocacy →](/about)
+[Learn about advocacy →](/programs/advocacy)
 
 </div>
 <div class="card">

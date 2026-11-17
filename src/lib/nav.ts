@@ -1,6 +1,7 @@
 export interface NavItem {
   label: string;
   href: string;
+  order?: number;
 }
 
 // Child routes that render generated content instead of a `pages` entry, so

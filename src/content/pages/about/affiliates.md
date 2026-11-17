@@ -2,7 +2,7 @@
 title: "Our Affiliates"
 slug: "about/affiliates"
 locale: en
-order: 11
+order: 13
 sourceUrl: "https://washcobikes.org/home/our_affiliates"
 draft: false
 ---

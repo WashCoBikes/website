@@ -1,24 +1,82 @@
 ---
 title: "Programs"
 slug: "programs"
+description: "Camps, classes, bikes for people who need them, and a voice for everyday riders: the ways we make bicyclists and bicycling better in Washington County."
 locale: en
 order: 30
 sourceUrl: "https://washcobikes.org/programs"
+heroImage: ../../assets/images/DSCN0393.webp
+heroImageAlt: "Young riders in WashCo Bikes shirts with their bikes at a Fanno Creek Trail sign"
 draft: false
 ---
 
-## Our Programs
+<h2 id="our-programs">Our programs</h2>
 
-Our programs include:
+<div class="grid grid--2">
+<div class="card">
 
-* **The [Community Bicycling Center](/shop) (CBC)**, where the community can buy used, refurbished bikes, get repair services, and buy accessories at reduced costs. We hope to hold community programs there as resources allow. The CBC also provides bike maintenance service for the City of Hillsboro.
-* [Saddle Up Summer Bike Camps](/programs/saddle-up-bike-camp) are directed primarily toward youth ages 8-13. They are week-long day camps where they campers learn to ride safely on streets, do minor mechanical maintenance on their bikes, and do a lot of riding and having fun. Our great hope is that we will create lifelong cyclists because of the fun and skills they learned at camp.
-* **Safe Routes to School (SRTS)** program support: SRTS is a national program with a goal of increasing the number of elementary school kids who walk and ride their bikes to school. We support the school Coordinators through bike rodeos and safety training, and bike maintenance.
-* **[Bike Safety Education](/programs/education):** We offer a portfolio of clinics and classes including
-  + Adult Learn to Ride and Family Learn to Ride
-  + Smart Cycling for New and Returning Cyclists
-  + Confidence in Traffic- the Art of Cooperative Cycling
-  + Commuting Brown bags, including at local companies.
-* **[Adopt a Bike (AAB)](/programs/adopt-a-bike):** The AAB program started in about 2010. This is a fundraiser for us as well as a great way to give back to the community. We solicit donations from the public, companies, or other organizations and then give a bike, helmet, lock, and lights to deserving students and adults. For the students, we work with selected schools to choose kids who would not have a bike otherwise, and hopefully have to do something to earn it-good attendance, write an essay, improve grades, etc. as determined by the school staff.
-* **Bike Rodeos:** Short events (a few hours max) is a fun way for kids to learn/practice bike handling skills and basic safety info. We run the younger kids through some drills and obstacle courses on a playground/parking lot. It may include learning about the ABC Quickcheck, helmet fitting, etc.
-* **Monthly e-Newsletter:** This is distributed to our contact list monthly, and contains news and information that is of interest to our members and supporters
+![Campers in yellow camp shirts and helmets swinging together at a park](../../assets/images/20190628_103813.jpg)
+
+#### Saddle Up Bike Camp
+
+Week-long summer day camps for kids ages 8–12, plus counselors in training. Campers learn to ride safely on real streets, do basic bike maintenance, and spend most of each day riding and exploring.
+
+[About bike camp →](/programs/saddle-up-bike-camp)
+
+</div>
+<div class="card">
+
+![An instructor riding alongside young riders during a skills lesson](../../assets/images/Steve_teaching_youth.webp)
+
+#### Education
+
+Classes for every stage of riding: Learn to Ride for kids and adults, the Smart Cycling workshop, monthly bike repair clinics, and skills and safety rodeos for groups.
+
+[Explore classes →](/programs/education)
+
+</div>
+<div class="card">
+
+![An officer fitting a bike helmet on a young child](../../assets/images/helmet_fitting.webp)
+
+#### Safe Routes to School
+
+We support Washington County's school coordinators with bike rodeos, safety training, helmet fitting, and bike safety checks, so more kids can walk and bike to school.
+
+[About Safe Routes →](/programs/advocacy#safe-routes)
+
+</div>
+<div class="card">
+
+![A young child in a helmet receiving a bicycle from Santa Claus](../../assets/images/bike_santa_big.webp)
+
+#### Adopt-a-Bike
+
+Our largest annual fundraiser. Donations put a bike, helmet, and safety gear in the hands of kids and adults who need them, working with schools and community partners.
+
+[About Adopt-a-Bike →](/programs/adopt-a-bike)
+
+</div>
+<div class="card">
+
+![Kids and adults riding together down a tree-lined street on a community ride](../../assets/images/TdP_riders.jpg)
+
+#### Advocacy
+
+We bring the everyday rider's perspective to the transportation plans, projects, and public decisions that shape where and how people ride.
+
+[About advocacy →](/programs/advocacy)
+
+</div>
+<div class="card">
+
+![A mechanic working on a bike in the WashCo Bikes shop](../../assets/images/IMG_2895.webp)
+
+#### Community Bicycle Center
+
+Our shop in downtown Hillsboro sells new, used, and refurbished bikes, offers affordable repairs and accessories, and maintains bikes for the City of Hillsboro.
+
+[Visit the shop →](/shop)
+
+</div>
+</div>
