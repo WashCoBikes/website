@@ -3,7 +3,7 @@ name: "Joe Kurmaskie"
 role: "Executive Director"
 group: staff
 order: 0
-photo: ../../assets/images/Joe_Kurmaskie.jpg
+photo: /images/Joe_Kurmaskie.jpg
 ---
 
 Joe *Metal Cowboy* Kurmaskie joins the rebranded WashCo Bikes, as the executive director. "I'm pumped to invigorate the suburbs and outlying community  west of Portland with exciting new programs while expanding quality existing ones.

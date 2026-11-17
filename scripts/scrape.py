@@ -25,7 +25,7 @@ Outputs:
     .cache/scrape/meta.json         title/description/hero per source page
     .cache/scrape/events.json       event entries from .ev pages
     .cache/scrape/images.json       source-image-path -> local filename map
-    src/assets/images/              downloaded images
+    public/images/                  downloaded images
 """
 
 from __future__ import annotations
@@ -49,7 +49,7 @@ CACHE_CONTENT = ROOT / ".cache" / "scrape" / "content"
 CACHE_META = ROOT / ".cache" / "scrape" / "meta.json"
 CACHE_EVENTS = ROOT / ".cache" / "scrape" / "events.json"
 CACHE_IMAGES = ROOT / ".cache" / "scrape" / "images.json"
-IMAGES_DIR = ROOT / "src" / "assets" / "images"
+IMAGES_DIR = ROOT / "public" / "images"
 
 DELAY = 0.5  # seconds between requests; only ~70 pages
 
@@ -181,7 +181,7 @@ def extract_images(soup: BeautifulSoup, image_map: dict, broken: list) -> None:
                 continue
             time.sleep(0.1)
         image_map[src] = name
-        img["src"] = f"/assets/images/{name}"
+        img["src"] = f"/images/{name}"
         for attr in ("width", "height", "border", "style"):
             img.attrs.pop(attr, None)
 

@@ -5,7 +5,7 @@ description: "Week-long summer day camps where kids build bike skills, learn to 
 locale: en
 order: 31
 sourceUrl: "https://washcobikes.org/programs/saddle_up_bike_camp"
-heroImage: ../../../assets/images/2019_TIGARD_BC.jpg
+heroImage: /images/2019_TIGARD_BC.jpg
 heroImageAlt: "A group of campers in yellow camp shirts posing together outdoors"
 heroActions:
   - label: "Ask about camp"
@@ -133,22 +133,22 @@ A few pictures from past camps.
 
 <div class="grid grid--3 gallery">
 
-![Campers choosing snacks from a buffet](../../../assets/images/20190627_120530.jpg)
+![Campers choosing snacks from a buffet](/images/20190627_120530.jpg)
 
-![Campers cooling off in a park splash fountain](../../../assets/images/20190626_140557.jpg)
+![Campers cooling off in a park splash fountain](/images/20190626_140557.jpg)
 
-![Campers in yellow shirts riding a cone course in a parking lot](../../../assets/images/2019_BC_DRILLS.jpg)
+![Campers in yellow shirts riding a cone course in a parking lot](/images/2019_BC_DRILLS.jpg)
 
-![Campers sharing ice cream around a table on a camp outing](../../../assets/images/ENJOING_A_TREAT.jpg)
+![Campers sharing ice cream around a table on a camp outing](/images/ENJOING_A_TREAT.jpg)
 
-![Campers playing on swings at a neighborhood park](../../../assets/images/20190628_103813.jpg)
+![Campers playing on swings at a neighborhood park](/images/20190628_103813.jpg)
 
-![Campers playing table tennis indoors during a camp outing](../../../assets/images/20190627_130045.jpg)
+![Campers playing table tennis indoors during a camp outing](/images/20190627_130045.jpg)
 
-![Campers and a camp leader taking a break at a cafe](../../../assets/images/20190625_140826.jpg)
+![Campers and a camp leader taking a break at a cafe](/images/20190625_140826.jpg)
 
-![Campers bowling, with helmets stacked on the tables](../../../assets/images/20190620_134305.jpg)
+![Campers bowling, with helmets stacked on the tables](/images/20190620_134305.jpg)
 
-![Campers eating lunch together indoors](../../../assets/images/20190618_121245.jpg)
+![Campers eating lunch together indoors](/images/20190618_121245.jpg)
 
 </div>

@@ -1,7 +1,6 @@
 ---
 import { navItems } from '../lib/nav';
 import site from '../data/site.json';
-import logo from '../assets/images/WashCo_Logo.png';
 
 const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 
@@ -14,7 +13,7 @@ function isActive(href: string): boolean {
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/" aria-label="WashCo Bikes — home">
-      <img src={logo.src} width="140" height="51" alt="WashCo Bikes logo" />
+      <img src="/images/WashCo_Logo.png" width="140" height="51" alt="WashCo Bikes logo" />
     </a>
 
     <nav class="main-nav" aria-label="Primary" id="main-nav">

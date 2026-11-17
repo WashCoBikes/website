@@ -41,6 +41,7 @@ Run `mise tasks` to list these, or `mise run <task>`.
 |---|---|
 | `install` | Install Node dependencies |
 | `dev` | Start the dev server on http://localhost:4321 |
+| `cms` | Open the Sveltia editor and show local editing instructions |
 | `build` | Build the static site into `dist/` |
 | `preview` | Build, then serve `dist/` locally for review |
 | `sync` | Regenerate content collection types after a schema change |
@@ -55,7 +56,7 @@ Only needed when re-pulling from the live site. Day-to-day editing happens in
 | Task | What it does |
 |---|---|
 | `deps:py` | Install scraper dependencies into `.cache/py-libs` |
-| `scrape` | Re-fetch washcobikes.org into `.cache/scrape/` and `src/assets/images/` |
+| `scrape` | Re-fetch washcobikes.org into `.cache/scrape/` and `public/images/` |
 | `content` | Regenerate `src/content/` from the scrape cache |
 | `refresh` | `scrape` then `content` — a full content refresh |
 
@@ -75,9 +76,9 @@ src/
   components/       Header, Footer, HoursWidget, StaffCard, SectionNav
   layouts/          BaseLayout
   styles/global.css Single stylesheet, custom properties
-  assets/images/    Migrated images, processed by Astro
 public/
   admin/            Sveltia CMS
+  images/           CMS-managed site images
   _redirects        Old URL -> new URL, 301s
 scripts/            Content extraction and verification
 ```
@@ -88,12 +89,35 @@ Markdown in `src/content/` is the source of truth. `src/data/site.json` holds
 global values — hours are structured per-day data rather than a prose string,
 because the homepage widget renders them.
 
-The CMS lives at `/admin`. It currently runs in **local mode** only: open
-`/admin/index.html` in a Chromium-based browser and choose "Work with Local
-Repository." It needs no login and commits nothing.
+If you want a CMS or a WYSIWYG-style editing experience, this site already has
+[Sveltia CMS](https://sveltiacms.app/). It provides a visual editor for page
+text, images, staff, events, open positions, and site settings. It edits content
+and fields, not the site's page layouts or CSS.
 
-Which backend this ends up on is deliberately still open — it depends on whether
-the people who will actually edit the site are willing to use a GitHub account.
+The CMS is a static page at `/admin/` on the built site. For local editing, run
+`mise run cms`. It starts Astro in the foreground, opens the admin page, and
+prints the steps in the terminal. Use Chrome or Edge for local file access; if
+your default browser is different, open
+`http://localhost:4321/admin/index.html` in Chrome or Edge. Choose **Work with
+Local Repository** and select this repository's root folder. Changes are written
+to local files; review and commit them with Git. Stop the server with Ctrl-C or
+by closing the terminal tab.
+
+The editor manages pages, staff, events, open positions, and site settings.
+All site images are in `public/images/` and appear in the CMS Assets page. New
+uploads use the same folder and are referenced as `/images/...`. Astro serves
+these files directly without image optimization. Empty optional fields are omitted
+from front matter so they pass the Astro collection schemas.
+
+The configured GitHub backend points to `WashCoBikes/website`. To edit on the
+deployed site, editors need repository write access and GitHub authentication.
+The local repository workflow needs no GitHub token; a GitHub PAT signs into the
+remote backend, where changes are committed to GitHub rather than this checkout.
+For a small technical team, Sveltia supports a personal access token. For a
+regular sign-in flow on Netlify, register a GitHub OAuth app and add its client
+ID and secret under the Netlify project's **Security > OAuth** settings. This
+account-level step is not configured in this repository. See the
+[Sveltia GitHub backend guide](https://sveltiacms.app/en/docs/backends/github).
 
 ## Contact form
 

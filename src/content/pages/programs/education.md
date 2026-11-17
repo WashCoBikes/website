@@ -5,7 +5,7 @@ description: "Hands-on classes for every stage of riding, from first pedal strok
 locale: en
 order: 32
 sourceUrl: "https://washcobikes.org/programs/education"
-heroImage: ../../../assets/images/bike_clinic_stock_photo.jpg
+heroImage: /images/bike_clinic_stock_photo.jpg
 heroImageAlt: "A mechanic in gloves fitting a tire onto a bicycle wheel"
 ---
 
@@ -90,9 +90,9 @@ This is not a Learn to Ride class. Riders should already be able to start, stop,
 
 <div class="grid grid--2">
 
-![An instructor leading a Smart Cycling class through riding drills on a covered court](../../../assets/images/20160522_145512.jpg)
+![An instructor leading a Smart Cycling class through riding drills on a covered court](/images/20160522_145512.jpg)
 
-![An instructor demonstrating a bicycle pump to cycling students](../../../assets/images/20160522_135424.jpg)
+![An instructor demonstrating a bicycle pump to cycling students](/images/20160522_135424.jpg)
 
 </div>
 
@@ -128,9 +128,9 @@ A chance for people of all ages to improve their safety and bicycle skills throu
 
 <div class="grid grid--2">
 
-![Instructors demonstrating bicycle tire maintenance to a group](../../../assets/images/admujeres_5.jpg)
+![Instructors demonstrating bicycle tire maintenance to a group](/images/admujeres_5.jpg)
 
-![Children and adults with bicycles outside a school](../../../assets/images/IMAG0527.jpg)
+![Children and adults with bicycles outside a school](/images/IMAG0527.jpg)
 
 </div>
 

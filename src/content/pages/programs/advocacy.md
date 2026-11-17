@@ -5,7 +5,7 @@ description: "We represent people who ride and work for safer, more connected, m
 locale: en
 order: 34
 draft: false
-heroImage: ../../../assets/images/concept-advocacy-community-ride.jpg
+heroImage: /images/concept-advocacy-community-ride.jpg
 heroImageAlt: "A community bicycle ride on a calm neighborhood street"
 heroActions:
   - label: "Share a bicycling concern"
@@ -25,7 +25,7 @@ WashCo Bikes has been a voice for Washington County's bicycling community since 
 
 <h2 id="how">From school parking lots to county transportation plans</h2>
 
-![Families and adults riding together in a protected urban bike lane](../../../assets/images/concept-advocacy-protected-lane.jpg)
+![Families and adults riding together in a protected urban bike lane](/images/concept-advocacy-protected-lane.jpg)
 
 Advocacy is more than asking for bike lanes. It means helping decision-makers understand how streets work for real people, supporting programs that build safe riding habits, and making sure bicycling is considered when Washington County plans for growth.
 
@@ -33,7 +33,7 @@ Events, education, encouragement, and advocacy reinforce one another. More peopl
 
 <h2 id="safe-routes">Helping students get to school safely and confidently</h2>
 
-![Students riding bicycles at a supervised school crossing with adult safety leaders](../../../assets/images/concept-advocacy-school-crossing.jpg)
+![Students riding bicycles at a supervised school crossing with adult safety leaders](/images/concept-advocacy-school-crossing.jpg)
 
 Washington County's Safe Routes to School program brings transportation and education leaders together to encourage children to walk and bicycle safely to school. It relies on partnerships among agencies, schools, community organizations, and neighborhoods, and WashCo Bikes is part of that support system. We help students and families build the skills and confidence to walk and bike to school safely through:
 
@@ -47,7 +47,7 @@ Washington County's Safe Routes to School program brings transportation and educ
 
 <h2 id="planning">Bringing the bicyclist's perspective to a complicated system</h2>
 
-![Community members and bicyclists reviewing a street design concept beside a protected bike lane](../../../assets/images/concept-advocacy-street-design.jpg)
+![Community members and bicyclists reviewing a street design concept beside a protected bike lane](/images/concept-advocacy-street-design.jpg)
 
 Bicycling in Washington County is shaped by many jurisdictions and agencies. We follow the plans, projects, and public processes that affect where and how people ride—roadway projects, bicycle networks, crossings, trails, and the connections between neighborhoods, schools, jobs, transit, and community destinations.
 
@@ -86,7 +86,7 @@ Washington County's 13 cities, plus TriMet and other partners whose streets, tra
 
 <h2 id="priorities">Comfortable, connected bicycling for all ages and abilities</h2>
 
-![Adult bicyclists riding together on a scenic rural road](../../../assets/images/concept-advocacy-rural-road.jpg)
+![Adult bicyclists riding together on a scenic rural road](/images/concept-advocacy-rural-road.jpg)
 
 Our [mission](/about#mission) guides the priorities we bring to public conversations:
 

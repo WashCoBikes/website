@@ -40,17 +40,17 @@ For three years, WashCo BTC has sponsored an Adopt-A-Bike program for the holida
 
 [Read what the Oregonian has to say about Dulce and Estella's new bikes.](http://www.oregonlive.com/forest-grove/index.ssf/2012/10/washco_btc_gifts_cornelius_gir.html)
 
-![Dulce and Estella get new bikes](../../../assets/images/Vamonos1.JPG "Dulce and Estella get new bikes")![Vamonos ride leader Carl Nelson](../../../assets/images/Vamonos2.JPG "Vamonos ride leader Carl Nelson")
+![Dulce and Estella get new bikes](/images/Vamonos1.JPG "Dulce and Estella get new bikes")![Vamonos ride leader Carl Nelson](/images/Vamonos2.JPG "Vamonos ride leader Carl Nelson")
 
 ## Chicas get their ride ready
 
 LCI certified instructors worked with these young women from [Adelante Mujeres](http://www.adelantemujeres.org/) "Chicas" program on basic bike safety and skills.  What's more, these girls have agreed to attend Saturday classes at Fern Hill Elementary school in Forest Grove where we will have two more classes for the Chica's. This time these girls will be helping the instructors teach. Can you think of a better way to start a leadership program?
 
-![Participants from Adelante Mujeres holding their course completion certificates](../../../assets/images/admujeres_1.jpg)![An instructor showing a group how to inspect a bicycle tire](../../../assets/images/admujeres_3.jpg)![Instructors demonstrating bicycle tire maintenance to a group](../../../assets/images/admujeres_5.jpg)
+![Participants from Adelante Mujeres holding their course completion certificates](/images/admujeres_1.jpg)![An instructor showing a group how to inspect a bicycle tire](/images/admujeres_3.jpg)![Instructors demonstrating bicycle tire maintenance to a group](/images/admujeres_5.jpg)
 
 ## Hugh's Story
 
-![Hugh celebrating his 80th birthday after riding 80 miles in under 8 hours.](../../../assets/images/Hugh-Ferguson-028-300x279.jpg "Hugh celebrating his 80th birthday after riding 80 miles in under 8 hours.")
+![Hugh celebrating his 80th birthday after riding 80 miles in under 8 hours.](/images/Hugh-Ferguson-028-300x279.jpg "Hugh celebrating his 80th birthday after riding 80 miles in under 8 hours.")
 
 **Hugh celebrating his 80th birthday after riding 80 miles in under 8 hours.**
 
@@ -62,7 +62,7 @@ WashCo BTC was there to document the ride, and together with [Elders In Action](
 
 ## Jose's Story
 
-![Jose (in green) and helmeted friends with Nancy Nelson, WashCo BTC volunteer.](../../../assets/images/Jose-et-cie.jpg "Jose (in green) and helmeted friends with Nancy Nelson, WashCo BTC volunteer.")
+![Jose (in green) and helmeted friends with Nancy Nelson, WashCo BTC volunteer.](/images/Jose-et-cie.jpg "Jose (in green) and helmeted friends with Nancy Nelson, WashCo BTC volunteer.")
 
 **Jose (in green) and helmeted friends with Nancy Nelson, WashCo BTC volunteer.**
 
@@ -79,7 +79,7 @@ Since the beginning of October 1st, Jose has completed 95% or better of his assi
 
 ## Tyler's Story
 
-![Tyler gets his bike](../../../assets/images/Presentation-to-Tyler-300x225.jpg "Tyler gets his bike")
+![Tyler gets his bike](/images/Presentation-to-Tyler-300x225.jpg "Tyler gets his bike")
 
 **Tyler gets his bike**
 

@@ -20,3 +20,13 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Content editing
+
+This site already includes Sveltia CMS at `public/admin/`. When someone asks for
+a CMS, WYSIWYG-style editing, or an easier way to update content, mention it as
+an available option and point them to the `Editing content` section of README.md.
+It edits content and structured fields, not page layouts or CSS. For local
+editing, run `mise run cms` and choose **Work with Local Repository** in Chrome
+or Edge. GitHub token sign-in uses the remote repository instead. Site images
+live in `public/images/`, the CMS media folder.

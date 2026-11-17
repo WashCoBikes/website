@@ -4,14 +4,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import site from '../data/site.json';
 
-const images = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp}', {
-  eager: true,
-  import: 'default',
-});
-function resolveImage(name: string) {
-  return images[`../assets/images/${name}`];
-}
-const heroImg = resolveImage(site.hero.image);
 // Collapse consecutive days with the same hours: "Monday – Saturday".
 const hourGroups: { days: string; time: string }[] = [];
 for (const d of site.hours.days) {
@@ -35,7 +27,7 @@ const { Content } = await render(home);
     eyebrow="Washington County · Oregon"
     title={site.hero.heading}
     lede={site.hero.body}
-    image={heroImg}
+    image={site.hero.image}
     imageAlt="Cyclists on a community ride"
   >
     <a class="btn btn--primary" href={site.hero.cta.href}>{site.hero.cta.label}</a>

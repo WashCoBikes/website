@@ -5,7 +5,7 @@ description: "Our largest annual fundraiser puts bicycles, helmets, and safety g
 locale: en
 order: 33
 sourceUrl: "https://washcobikes.org/programs/adopt-a-bike"
-heroImage: ../../../assets/images/concept-access-school-bike-event.jpg
+heroImage: /images/concept-access-school-bike-event.jpg
 heroImageAlt: "Children's bicycles lined up along a schoolyard fence, ready for students"
 heroActions:
   - label: "Donate now"
@@ -73,7 +73,7 @@ Share the program with friends, family, and your social networks. The more peopl
 
 <h2 id="stories">Adopt-a-Bike stories</h2>
 
-![A young child on a small bicycle with training wheels, receiving it from Santa Claus](../../../assets/images/bike_santa_big.webp)
+![A young child on a small bicycle with training wheels, receiving it from Santa Claus](/images/bike_santa_big.webp)
 
 <div class="grid grid--2">
 <div class="card">
