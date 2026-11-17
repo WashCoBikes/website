@@ -89,6 +89,11 @@ Markdown in `src/content/` is the source of truth. `src/data/site.json` holds
 global values — hours are structured per-day data rather than a prose string,
 because the homepage widget renders them.
 
+If you want a CMS or a WYSIWYG-style editing experience, this site already has
+[Sveltia CMS](https://sveltiacms.app/). It provides a visual editor for page
+text, images, staff, events, open positions, and site settings. It edits content
+and fields, not the site's page layouts or CSS.
+
 The CMS is a static page at `/admin/` on the built site. For local editing, run
 `mise run cms`. It starts Astro in the foreground, opens the admin page, and
 prints the steps in the terminal. Use Chrome or Edge for local file access; if
@@ -106,6 +111,8 @@ from front matter so they pass the Astro collection schemas.
 
 The configured GitHub backend points to `WashCoBikes/website`. To edit on the
 deployed site, editors need repository write access and GitHub authentication.
+The local repository workflow needs no GitHub token; a GitHub PAT signs into the
+remote backend, where changes are committed to GitHub rather than this checkout.
 For a small technical team, Sveltia supports a personal access token. For a
 regular sign-in flow on Netlify, register a GitHub OAuth app and add its client
 ID and secret under the Netlify project's **Security > OAuth** settings. This
