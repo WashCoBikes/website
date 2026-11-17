@@ -1,10 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 // The bio is the staff file's Markdown body, passed in as the default slot.
 interface Props {
   name: string;
   role: string;
-  photo?: ImageMetadata | string;
+  photo?: string;
   photoPosition?: string;
 }
 const { name, role, photo, photoPosition } = Astro.props;
@@ -13,11 +12,7 @@ const { name, role, photo, photoPosition } = Astro.props;
 <article class="staff-card">
   <div class="staff-photo">
     {photo ? (
-      typeof photo === 'string' ? (
-        <img src={photo} alt={`${name} — ${role}`} width="400" height="400" class="staff-img" style={photoPosition ? `object-position: ${photoPosition}` : undefined} loading="lazy" />
-      ) : (
-        <Image src={photo} alt={`${name} — ${role}`} width={400} height={400} class="staff-img" style={photoPosition ? `object-position: ${photoPosition}` : undefined} />
-      )
+      <img src={photo} alt={`${name} — ${role}`} width="400" height="400" class="staff-img" style={photoPosition ? `object-position: ${photoPosition}` : undefined} loading="lazy" />
     ) : (
       <div class="staff-initial" aria-hidden="true">{name.charAt(0)}</div>
     )}

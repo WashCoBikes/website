@@ -3,7 +3,7 @@ name: "Tricia Mortell"
 role: "Board of Directors Chair"
 group: board
 order: 0
-photo: ../../assets/images/tricia_and_lucy.jpg
+photo: /images/tricia_and_lucy.jpg
 photoPosition: "left center"
 ---
 

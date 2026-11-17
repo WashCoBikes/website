@@ -57,7 +57,7 @@ description = "Install scraper dependencies into .cache/py-libs"
 run = "pip install --quiet --target $PY_LIBS requests beautifulsoup4 markdownify"
 
 [tasks.scrape]
-description = "Re-fetch washcobikes.org into .cache/scrape/ and src/assets/images/"
+description = "Re-fetch washcobikes.org into .cache/scrape/ and public/images/"
 depends = ["deps:py"]
 run = "PYTHONPATH=$PY_LIBS python scripts/scrape.py"
 

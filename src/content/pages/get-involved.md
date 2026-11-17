@@ -48,7 +48,7 @@ Contact [tkelley@gmail.com](mailto:tkelley@gmail.com)
 
 ## Want to volunteer?
 
-![A team of volunteers from Intel](../../assets/images/IntelVolunteers.jpg "A team of volunteers from Intel")
+![A team of volunteers from Intel](/images/IntelVolunteers.jpg "A team of volunteers from Intel")
 
 **A team of volunteers from Intel**
 
@@ -64,13 +64,13 @@ We can't wait to hear from you!
 
 ## Words from our Executive Director
 
-![Joe Kurmaskie, Executive Director](../../assets/images/Joe_Kurmaskie.jpg)
+![Joe Kurmaskie, Executive Director](/images/Joe_Kurmaskie.jpg)
 
 WashCo Bikes is a great organization that does a lot for the community. We can't do it alone. Volunteers are needed to help us move bikes along. Let us know if you'd like to join forces with us. Fill out the application and my staff or I will be in touch.
 
 If you want to have a volunteer day with your fellow company employees, we can also arrange for that.
 
-[![Sign up for a volunteer opportunity](../../assets/images/pngkey_com-sign-up-button-png-3341582.jpg)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
+[![Sign up for a volunteer opportunity](/images/pngkey_com-sign-up-button-png-3341582.jpg)](https://washcobikes.wufoo.com/forms/mj4go0f08z1znp/)
 
 ## Get involved and help us achieve our mission!
 

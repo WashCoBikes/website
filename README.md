@@ -56,7 +56,7 @@ Only needed when re-pulling from the live site. Day-to-day editing happens in
 | Task | What it does |
 |---|---|
 | `deps:py` | Install scraper dependencies into `.cache/py-libs` |
-| `scrape` | Re-fetch washcobikes.org into `.cache/scrape/` and `src/assets/images/` |
+| `scrape` | Re-fetch washcobikes.org into `.cache/scrape/` and `public/images/` |
 | `content` | Regenerate `src/content/` from the scrape cache |
 | `refresh` | `scrape` then `content` — a full content refresh |
 
@@ -76,9 +76,9 @@ src/
   components/       Header, Footer, HoursWidget, StaffCard, SectionNav
   layouts/          BaseLayout
   styles/global.css Single stylesheet, custom properties
-  assets/images/    Migrated images, processed by Astro
 public/
   admin/            Sveltia CMS
+  images/           CMS-managed site images
   _redirects        Old URL -> new URL, 301s
 scripts/            Content extraction and verification
 ```
@@ -99,9 +99,9 @@ to local files; review and commit them with Git. Stop the server with Ctrl-C or
 by closing the terminal tab.
 
 The editor manages pages, staff, events, open positions, and site settings.
-New images uploaded through the editor go to `public/images/` and are referenced
-as `/images/...`. Existing images in `src/assets/images/` remain Astro-optimized;
-the site supports both kinds of image paths. Empty optional fields are omitted
+All site images are in `public/images/` and appear in the CMS Assets page. New
+uploads use the same folder and are referenced as `/images/...`. Astro serves
+these files directly without image optimization. Empty optional fields are omitted
 from front matter so they pass the Astro collection schemas.
 
 The configured GitHub backend points to `WashCoBikes/website`. To edit on the

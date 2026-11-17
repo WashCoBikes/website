@@ -3,7 +3,7 @@ name: "Jack Dempsey"
 role: "Board of Directors"
 group: board
 order: 7
-photo: ../../assets/images/Jack_Dempsey.jpg
+photo: /images/Jack_Dempsey.jpg
 ---
 
 My connection to bicycling began on a banana-seat Schwinn as a pre-teen, when a bike meant freedom, independence, and the chance to explore. Over the years, bicycling stayed with me in different ways—from commuting to work while living in Hawaii, to recreational riding in Guam, and bike touring in beautiful places like Italy, Japan, and Spain.

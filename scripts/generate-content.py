@@ -4,7 +4,7 @@
 Companion to scrape.py. Reads the faithful Markdown + metadata that scrape.py
 wrote to .cache/scrape/, applies the editorial merge defined in
 docs/implementation-plan.md §5-§6 (concatenate merged source pages under
-section headings, assign locale/order, rewrite image paths to be depth-relative
+section headings, assign locale/order, rewrite image paths to public URLs
 and internal links to the new routes), and writes:
 
     src/content/pages/*.md
@@ -99,14 +99,9 @@ def strip_scrape_header(md: str) -> str:
     return "\n".join(out).strip() + "\n"
 
 
-def img_prefix(slug: str) -> str:
-    """Relative path from src/content/pages/<slug>.md to src/assets/images/."""
-    depth = slug.count("/")
-    return "../" * (depth + 2) + "assets/images/"
-
-
 def rewrite_images(md: str, slug: str) -> str:
-    return md.replace("/assets/images/", img_prefix(slug))
+    """Normalize cached scrape images to the CMS media folder."""
+    return md.replace("/assets/images/", "/images/")
 
 
 def rewrite_links(md: str) -> str:
@@ -269,7 +264,7 @@ def main() -> None:
             f"role: {quote(role)}\n"
             f"group: {group}\n"
             f"order: {i}\n"
-            f"photo: ../../assets/images/{photo}\n"
+            f"photo: /images/{photo}\n"
             f"bio: {quote(bio)}\n"
             "---\n"
         )

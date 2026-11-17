@@ -5,7 +5,7 @@ description: "Camps, classes, bikes for people who need them, and a voice for ev
 locale: en
 order: 30
 sourceUrl: "https://washcobikes.org/programs"
-heroImage: ../../assets/images/DSCN0393.webp
+heroImage: /images/DSCN0393.webp
 heroImageAlt: "Young riders in WashCo Bikes shirts with their bikes at a Fanno Creek Trail sign"
 draft: false
 ---
@@ -15,7 +15,7 @@ draft: false
 <div class="grid grid--2">
 <div class="card">
 
-![Campers in yellow camp shirts and helmets swinging together at a park](../../assets/images/20190628_103813.jpg)
+![Campers in yellow camp shirts and helmets swinging together at a park](/images/20190628_103813.jpg)
 
 #### Saddle Up Bike Camp
 
@@ -26,7 +26,7 @@ Week-long summer day camps for kids ages 8–12, plus counselors in training. Ca
 </div>
 <div class="card">
 
-![An instructor riding alongside young riders during a skills lesson](../../assets/images/Steve_teaching_youth.webp)
+![An instructor riding alongside young riders during a skills lesson](/images/Steve_teaching_youth.webp)
 
 #### Education
 
@@ -37,7 +37,7 @@ Classes for every stage of riding: Learn to Ride for kids and adults, the Smart 
 </div>
 <div class="card">
 
-![An officer fitting a bike helmet on a young child](../../assets/images/helmet_fitting.webp)
+![An officer fitting a bike helmet on a young child](/images/helmet_fitting.webp)
 
 #### Safe Routes to School
 
@@ -48,7 +48,7 @@ We support Washington County's school coordinators with bike rodeos, safety trai
 </div>
 <div class="card">
 
-![A young child in a helmet receiving a bicycle from Santa Claus](../../assets/images/bike_santa_big.webp)
+![A young child in a helmet receiving a bicycle from Santa Claus](/images/bike_santa_big.webp)
 
 #### Adopt-a-Bike
 
@@ -59,7 +59,7 @@ Our largest annual fundraiser. Donations put a bike, helmet, and safety gear in 
 </div>
 <div class="card">
 
-![Kids and adults riding together down a tree-lined street on a community ride](../../assets/images/TdP_riders.jpg)
+![Kids and adults riding together down a tree-lined street on a community ride](/images/TdP_riders.jpg)
 
 #### Advocacy
 
@@ -70,7 +70,7 @@ We bring the everyday rider's perspective to the transportation plans, projects,
 </div>
 <div class="card">
 
-![A mechanic working on a bike in the WashCo Bikes shop](../../assets/images/IMG_2895.webp)
+![A mechanic working on a bike in the WashCo Bikes shop](/images/IMG_2895.webp)
 
 #### Community Bicycle Center
 

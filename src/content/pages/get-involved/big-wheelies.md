@@ -15,4 +15,4 @@ Donations go to the cleaning, refurbishing and transporting of bicycle to be giv
 Each month a themed cutout with each donor's name on it is pinned to the ceiling of our Community Bike Shop.  
 Your support is greatly appreciated.
 
-[![Join button](../../../assets/images/join.jpg)](https://washcobikes.wufoo.com/forms/q76t4qr0urc34o/)
+[![Join button](/images/join.jpg)](https://washcobikes.wufoo.com/forms/q76t4qr0urc34o/)

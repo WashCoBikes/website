@@ -3,14 +3,14 @@ import { glob } from 'astro/loaders';
 
 const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       title: z.string(),
       slug: z.string(),
       description: z.string().optional().default(''),
       locale: z.enum(['en', 'es']).default('en'),
       order: z.number().optional(),
-      heroImage: z.union([image(), z.string().startsWith('/images/')]).optional(),
+      heroImage: z.string().startsWith('/images/').optional(),
       heroImageAlt: z.string().optional(),
       // Buttons in the hero. The first is the gold primary button.
       heroActions: z.array(z.object({ label: z.string(), href: z.string() })).optional(),
@@ -32,12 +32,12 @@ const pages = defineCollection({
 
 const staff = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/staff' }),
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       name: z.string(),
       role: z.string(),
       group: z.enum(['mechanic', 'instructor', 'board', 'executive', 'staff']),
-      photo: z.union([image(), z.string().startsWith('/images/')]).optional(),
+      photo: z.string().startsWith('/images/').optional(),
       // CSS object-position for the square crop, e.g. "left center".
       photoPosition: z.string().optional(),
       order: z.number().optional(),

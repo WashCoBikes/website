@@ -155,7 +155,7 @@ collections:
             fields:
               - { label: 'Heading', name: heading, widget: string }
               - { label: 'Body', name: body, widget: text }
-              - { label: 'Image', name: image, widget: string, hint: 'Filename in src/assets/images (e.g. TdP_riders.jpg).' }
+              - { label: 'Image', name: image, widget: image, hint: 'Homepage banner image.' }
               - label: 'Button'
                 name: cta
                 widget: object

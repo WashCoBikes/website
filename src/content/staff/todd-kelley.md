@@ -3,7 +3,7 @@ name: "Todd Kelley"
 role: "Mechanic"
 group: staff
 order: 0
-photo: ../../assets/images/Todd_Kelley_sm.jpg
+photo: /images/Todd_Kelley_sm.jpg
 ---
 
 Todd has been a bike enthusiast and advocate for many years. When he moved to the area, he discovered the WashCo Bike Shop for all his cycling needs. He also realized his values aligned well with the organization's mission.

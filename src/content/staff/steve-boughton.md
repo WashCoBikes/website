@@ -3,7 +3,7 @@ name: "Steve Boughton"
 role: "Education Coordinator"
 group: board
 order: 6
-photo: ../../assets/images/2014-BoardMembershighres-SBoughton.jpg
+photo: /images/2014-BoardMembershighres-SBoughton.jpg
 ---
 
 Steve has been with the organization since January 2009, and served as the Board Chair from 2012 to 2023.

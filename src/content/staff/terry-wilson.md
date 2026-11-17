@@ -3,7 +3,7 @@ name: "Terry Wilson"
 role: "Board Member, Health Care Overseer"
 group: board
 order: 4
-photo: ../../assets/images/TerryWilson.jpg
+photo: /images/TerryWilson.jpg
 ---
 
 I’m a retired electrical engineer. My semiconductor career spanned from (RAM) memory design to radio chips used in iPhones and GPS.  I’m constantly amazed at how the industry advanced from a few hundred devices on a chip in the 70’s, to millions of devices on a chip in the 20xx’s.

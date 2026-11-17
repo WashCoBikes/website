@@ -21,7 +21,7 @@ From the first pedal to everyday transportation, WashCo Bikes helps people build
 <div class="grid grid--3">
 <div class="card">
 
-![An instructor showing a group how to work on a bike tire during a hands-on lesson](../../assets/images/admujeres_3.jpg)
+![An instructor showing a group how to work on a bike tire during a hands-on lesson](/images/admujeres_3.jpg)
 
 #### Education: Skills first. Confidence follows.
 
@@ -32,7 +32,7 @@ Learn to ride, return after time away, improve bike handling, practice safe cycl
 </div>
 <div class="card">
 
-![Community leaders at a bicycle infrastructure ribbon cutting](../../assets/images/concept-advocacy-ribbon-cutting.webp)
+![Community leaders at a bicycle infrastructure ribbon cutting](/images/concept-advocacy-ribbon-cutting.webp)
 
 #### Advocacy: Safer streets. Better connections.
 
@@ -43,7 +43,7 @@ We support practical bicycle infrastructure, informed transportation decisions, 
 </div>
 <div class="card">
 
-![Hands repairing a bicycle at the WashCo Bikes Cycling Center](../../assets/images/concept-cycling-center-repair.webp)
+![Hands repairing a bicycle at the WashCo Bikes Cycling Center](/images/concept-cycling-center-repair.webp)
 
 #### Cycling Center: A bike shop with a bigger purpose.
 

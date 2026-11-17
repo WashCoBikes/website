@@ -6,7 +6,7 @@ order: 20
 sourceUrl: "https://washcobikes.org/retail_amp_repair_shop"
 draft: false
 description: "New, used and refurbished bikes, full-service repairs, and accessories in downtown Hillsboro."
-heroImage: ../../assets/images/concept-visit-shop-interior.jpg
+heroImage: /images/concept-visit-shop-interior.jpg
 showHours: true
 showRates: true
 ---
